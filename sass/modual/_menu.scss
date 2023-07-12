@@ -11,16 +11,20 @@
 // pc版 條列menu
 .menu {
   box-sizing: border-box;
-  position: relative;
+  position: absolute;
+  bottom: 130px;
+  left: 0;
   z-index: 99;
   clear: both;
   &.sticky {
     position: fixed;
     top: 0;
+    bottom: auto;
     left: 0;
     width: 100%;
     z-index: 999;
-    background-color: #fff;
+    padding-bottom: 0;
+    background: $primaryColor;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     &:after {
       position: absolute;
@@ -35,6 +39,8 @@
       width: 100%;
       max-width: $container-max;
       margin: 0 auto;
+      border-radius: 0;
+      display: flex;
     }
   }
   @include screen('mobile') {
@@ -43,21 +49,29 @@
   // 預設選單 ul
   > ul {
     margin: 0;
-    padding: 0;
+    padding: 30px 56px 2px 90px;
     list-style-type: none;
-    display: flex;
+    display: inline-flex;
     flex-wrap: wrap;
+    background: $primaryColor;
+    border-radius: 0 90px 1px 0;
+    @include screen('mobile') {
+      padding: 0;
+    }
     // 第一層選單樣式
     > li {
-      flex: 0 1 16%;
+      margin-top: 5px;
+      border-left: 1px solid #6d80c6;
       > a {
         display: block;
-        padding: 0 1em;
-        min-height: 2.5em;
+        padding: 0.1em 2em 0.1em 1em;
+        min-height: 3em;
         font-weight: bold;
-        line-height: 2.5em;
         white-space: nowrap;
-        color: $color-word;
+        color: #fff;
+        font-size: 1.125em;
+
+        transition: 0.2s;
       }
       &.hasChild {
         > a {
@@ -78,9 +92,10 @@
       }
       &:hover {
         > a {
-          color: $aHover;
+          color: #fff;
+          transform: translateX(3px);
           &:after {
-            border: 2px solid $aHover;
+            border: 2px solid #fff;
             border-bottom: none;
             border-left: none;
           }
@@ -108,7 +123,7 @@
         list-style: none;
         text-align: left;
         animation: showMenu 0.3s $cubic;
-        font-size: 0.875em;
+        font-size: 1rem;
         // 第二層選單樣式
         li {
           float: none;

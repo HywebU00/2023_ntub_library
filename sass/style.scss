@@ -2,7 +2,7 @@
 @import '_variable'; //變數
 // 共通 common
 @import 'common/_mixin'; //客製MIXIN
-@import 'common/_grid'; //格線 - bootstrap
+//@import 'common/_grid'; //格線 - bootstrap
 @import 'common/_grid-flex'; //格線 - flex
 @import 'common/_normalize'; //reset
 @import 'common/_typography'; //CP文字排版
@@ -19,7 +19,7 @@
 @import 'element/_tooltip'; //tooltip
 @import 'element/_category'; //資料大類
 @import 'element/_tag'; //文章標籤
-@import "element/_element"; //小元素
+@import 'element/_element'; //小元素
 // 模組 modual
 @import 'modual/_header'; //header
 @import 'modual/_menu';
@@ -29,7 +29,7 @@
 @import 'modual/_footer'; //footer
 @import 'modual/_fatfooter'; //fatfooter
 // @import "modual/_form";					//表單-麥莉
-@import 'modual/_form-beta'; //表單（純flex）
+@import 'modual/_form'; //表單（純flex）
 @import 'modual/_table'; //表格
 @import 'modual/_list'; //表單樣式
 @import 'modual/_link'; //連結樣式

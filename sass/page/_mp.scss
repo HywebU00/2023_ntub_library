@@ -1,75 +1,725 @@
 /////////////////////////////////////////////////////////以下為demo範例///
 // 首頁區塊設定
 // more按鈕
-a.more {
-    display: block;
-    width: 10em;
-    text-align: center;
-    height: 2.5em;
-    margin: 0.5em auto 0.5em;
-    line-height: 2.5;
-    color: $primaryColor;
-    border: 1px solid $primaryColor;
-    text-align: center;
-    overflow: hidden;
-    vertical-align: middle;
-    -webkit-transform: perspective(1px) translateZ(0);
-    transform: perspective(1px) translateZ(0);
-    box-shadow: 0 0 1px transparent;
+.more {
+  display: flex;
+  justify-content: flex-end;
+
+  a {
+    display: flex;
+    align-items: center;
     position: relative;
-    -webkit-transition-property: color;
-    transition-property: color;
-    -webkit-transition-duration: 0.2s;
-    transition-duration: 0.2s;
-    &:after {
-        content: '';
-        width: 12px;
-        height: 12px;
-        border: 2px solid #fff;
-        transform: rotate(45deg);
-        position: absolute;
-        right: -10px;
-        top: 14px;
-        border-left: none;
-        border-bottom: none;
-        transition: 0.3s ease-out;
+    font-weight: bold;
+    color: #3c113c;
+    text-transform: uppercase;
+    transition: 0.2s;
+    &::after {
+      content: '';
+      display: block;
+      width: 36px;
+      height: 2px;
+      background: #3c113c;
+      margin-left: 3px;
+      transition: 0.2s;
     }
-    &:before {
+    &::before {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: calc(50% - 6px);
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 6px 0 0 6px;
+      border-color: transparent transparent transparent #3c113c;
+      transition: 0.2s;
+    }
+    &:hover {
+      color: $secondaryColor;
+      transform: translateX(3px);
+      &::after {
+        transform-origin: left center;
+        transform: scaleX(1.2);
+      }
+      &::before {
+        right: -8px;
+      }
+    }
+  }
+}
+//讀者專區
+.readerBlock {
+  position: fixed;
+  right: -380px;
+  top: 20%;
+  display: flex;
+  z-index: 99;
+  max-width: 100%;
+  width: 440px;
+  font-size: 1.125em;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 0 18px 5px;
+  border-radius: 20px 0 0 20px;
+  transition: 0.4s;
+  @include screen('mobile') {
+    top: 80px;
+    position: absolute;
+  }
+  @media screen and (max-width: 440px) {
+    right: calc(-100% + 60px);
+    z-index: 98;
+  }
+  &.open {
+    right: 0;
+    .readerLogin {
+      &::after {
+        background-image: url(../images/icon/icon_arrow_right2.svg);
+        background-size: 14px;
+      }
+    }
+  }
+  .readerLogin {
+    position: relative;
+    z-index: 1;
+    writing-mode: vertical-rl;
+    width: 60px;
+    min-height: 180px;
+    padding: 2.65em 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.2em;
+    border-radius: 20px 0 0 20px;
+    margin: 0;
+    background: rgba(149, 16, 110, 1) url(../images/icon/icon_man2.svg) no-repeat top 20px center;
+    background-size: 1.125em;
+    color: #fff;
+    border: 0;
+    box-shadow: rgba(0, 0, 0, 0.6) 25px 0px 25px -25px;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 20px;
+      left: auto;
+      right: auto;
+      display: block;
+      width: 22px;
+      height: 22px;
+      background: rgba(255, 255, 255, 0.3) url(../images/icon/icon_arrow_left2.svg) no-repeat center;
+      background-size: 14px;
+      border-radius: 50%;
+    }
+  }
+  .readerContent {
+    width: 380px;
+    flex: 0 1 380px;
+    padding: 20px 25px;
+    color: #fff;
+    background: $secondaryColor;
+    background: linear-gradient(-90deg, rgba(43, 34, 92, 1) 0%, rgba(107, 36, 107, 1) 70%, rgba(149, 16, 110, 1) 100%);
+    input[type='text'],
+    input[type='password'] {
+      width: calc(100% - 0.6em);
+      background: rgba(255, 255, 255, 0.15);
+      border: none;
+      color: #fff;
+      padding: 0.4em 0.5em 0.4em 2.5em;
+      &::placeholder {
+        color: #cd9cc8;
+      }
+    }
+    .btn-login {
+      background-color: rgba(255, 255, 255, 0.45);
+      color: #fff;
+      border: none;
+      letter-spacing: 0.2em;
+      font-weight: bold;
+      flex: 1 1 auto;
+      min-width: 120px;
+      padding: 0.4em 0.5em;
+    }
+  }
+}
+//最新消息
+.latestNews {
+  display: flex;
+  flex-direction: column;
+  .tabSet {
+    border-radius: 48px;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+    padding: 2em;
+    flex-grow: 1;
+    margin: 0 auto;
+    width: 100%;
+    // @include screen('tablet') {
+    //   padding: 1.5em 1em;
+    // }
+  }
+
+  .tabContentGroup {
+    margin-top: 1em;
+  }
+  .tabContent {
+    padding-bottom: 0;
+    ul {
+      @include li-reset;
+      margin-bottom: 1.5em;
+    }
+    li {
+      > a {
+        position: relative;
+        padding: 1em 0;
+        display: flex;
+        transition: 0.3s;
+        border-bottom: 1px solid $color-line;
+        &:hover {
+          transform: translateX(3px);
+          p {
+            color: $aHover;
+          }
+        }
+        p {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          flex: 1 1 auto;
+          color: $color-word;
+          margin: 0;
+        }
+      }
+    }
+    .newsTag {
+      flex: 0 0 68px;
+      text-align: center;
+      color: $importantColor;
+      font-weight: bold;
+      margin-right: 0.5em;
+      &::after {
         content: '';
+        display: block;
+        width: 68px;
+        height: 3px;
+        background-color: $importantColor;
         position: absolute;
-        z-index: -1;
-        top: 0;
         left: 0;
-        right: 0;
-        bottom: 0;
-        background: $primaryColor;
-        -webkit-transform: scale(0);
-        transform: scale(0);
-        -webkit-transition-property: transform;
-        transition-property: transform;
-        -webkit-transition-duration: 0.2s;
-        transition-duration: 0.2s;
-        -webkit-transition-timing-function: ease-out;
-        transition-timing-function: ease-out;
+        top: 100%;
+      }
     }
-    &:hover,
-    &:focus,
-    &.active {
-        color: white;
-        &:before {
-            -webkit-transform: scale(1);
-            transform: scale(1);
-        }
-        &:after {
-            right: 15px;
-        }
+    time {
+      white-space: nowrap;
+      font-size: 0.875em;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      color: #666;
     }
+  }
+}
+//小叮嚀
+.tips {
+  display: flex;
+  flex-direction: column;
+  .listGrp {
+    border-radius: 48px;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+    padding: 2em;
+    flex-grow: 1;
+    ul {
+      @include li-reset;
+      margin: 1.5em 0;
+      @include screen('mobile') {
+        margin-top: 0;
+      }
+    }
+    li {
+      > a {
+        position: relative;
+        border-bottom: 1px solid $color-line;
+        display: block;
+        align-items: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        flex: 1 1 auto;
+        color: $color-word;
+        padding: 1em 0 1em 1.5em;
+        transition: 0.3s;
+        &:hover {
+          color: $aHover;
+          transform: translateX(3px);
+        }
+        &::before {
+          content: '';
+          position: absolute;
+          top: calc(50% - 2px);
+          left: 8px;
+          display: block;
+          width: 4px;
+          height: 4px;
+          border-radius: 50%;
+          background-color: #666;
+        }
+      }
+    }
+  }
 }
 
-// 範例：
-.demosection {
-    [class^='col'] {
-        border: 2px solid #fff;
-        background: #dedede;
+//常用服務
+.serviceBlock {
+  border-radius: 48px;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+  padding: 2em 3em;
+  @include screen('tablet') {
+    padding: 2em 1em;
+  }
+  .serviceSlider {
+    padding: 0 6em;
+    @include screen('mobile') {
+      padding: 0 2em;
     }
+    .slick-list {
+      padding: 0.5em 0;
+    }
+  }
+  .sliderItem {
+    background-color: transparent;
+    margin: 0 0.5em;
+    a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: 0.3s;
+      &:hover {
+        transform: scale(1.1);
+        .serviceName {
+          font-weight: bold;
+        }
+      }
+    }
+    &:nth-child(even) {
+      .pic {
+        background: url(../images/service_bg01.svg) no-repeat center;
+        > .svg path {
+          fill: $secondaryColor;
+        }
+      }
+    }
+    &:nth-child(odd) {
+      .pic {
+        background: url(../images/service_bg02.svg) no-repeat center;
+        > .svg path {
+          fill: $importantColor;
+        }
+      }
+    }
+    .pic {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 110px;
+      height: 110px;
+      padding: 1em;
+      background-size: contain;
+      margin-bottom: 0.5em;
+      aspect-ratio: 1/1;
+      .svg,
+      img {
+        display: block;
+        max-width: 100%;
+        width: 46px;
+      }
+    }
+    .serviceName {
+      color: $color-word;
+      text-align: center;
+    }
+  }
+}
+
+//新書看板
+.booksBlock {
+  border-radius: 48px;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+  padding: 2em 3em;
+  @include screen('mobile') {
+    padding: 2em 1em;
+  }
+  .bookSlider {
+    padding: 0 6em;
+    @include screen('mobile') {
+      padding: 0 2em;
+    }
+    .slick-list {
+      padding: 1em 0;
+    }
+  }
+  .bookItem {
+    margin: 0 1em;
+    a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: 0.3s;
+      &:hover {
+        transform: scale(1.05);
+
+        .bookName {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  .img-container {
+    aspect-ratio: 1/1;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 15px 0px;
+    background-color: #fff;
+    margin-bottom: 1em;
+    img {
+      object-fit: contain;
+    }
+  }
+  .bookName {
+    text-align: center;
+    color: $color-word;
+  }
+}
+
+//重要活動
+.events {
+  position: relative;
+  margin-top: 6em !important;
+  &::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: calc(100% - 62px);
+    background: linear-gradient(90deg, rgba(244, 240, 238, 0.8) 0%, rgba(250, 248, 247, 0.5) 100%);
+    border-radius: 170px 0 0 0;
+    @include screen('mobile') {
+      width: calc(100% - 15px);
+    }
+  }
+  .more {
+    position: relative;
+    a {
+      margin: 1em 3em;
+      @include screen('mobile') {
+        margin: 1em;
+      }
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      right: -60px;
+      bottom: 0px;
+      width: 238px;
+      height: 54px;
+      border-radius: 0 150px 0 0;
+      background: #fff;
+    }
+  }
+}
+.eventsBlock {
+  padding: 3em 3em 0;
+  @include screen('mobile') {
+    padding: 0 1em;
+  }
+  .thumbnailSlider {
+    padding: 0 6em;
+    @include screen('mobile') {
+      padding: 0 2em;
+    }
+    .slick-list {
+      padding: 0.5em 0;
+    }
+  }
+  .thumbnailSlider {
+    margin-bottom: 1em;
+  }
+  .thumbnail {
+    margin: 0 0.5em;
+    padding: 1em;
+    .img-container {
+      aspect-ratio: 16/9;
+      border-radius: 4px;
+      box-shadow: rgba(0, 0, 0, 0.3) 0 0 7px;
+      img {
+        object-fit: cover;
+      }
+    }
+    .caption {
+      p {
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-height: 12em;
+        line-height: 1.8;
+      }
+    }
+  }
+}
+
+//各館資訊
+.branchInfo {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 48%;
+    height: calc(100% - 110px);
+    border-radius: 170px 0 0 0;
+    background: url(../images/pic01.jpg) no-repeat right bottom;
+    background-size: cover;
+    @include screen('mobile') {
+      content: none;
+    }
+  }
+  .tabItemGrp {
+    width: 580px;
+    max-width: 100%;
+    margin: 2rem;
+    @include screen('mobile') {
+      margin: 2rem 0;
+    }
+  }
+  .tabItems {
+    .item {
+      flex: 1 1 190px;
+      white-space: nowrap;
+      @include screen('mobile') {
+        flex-basis: auto;
+      }
+    }
+  }
+  .infoBlock {
+    position: relative;
+    width: 860px;
+    max-width: 100%;
+    display: flex;
+    padding: 4em 8em 3em 2em;
+    margin-bottom: 58px;
+    flex-wrap: wrap;
+    @include screen('tablet') {
+      padding-right: 4em;
+    }
+    @include screen('xs_mobile') {
+      padding: 2em 1em;
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 950px;
+      height: 100%;
+      background: linear-gradient(-90deg, rgba(244, 240, 238, 0.8) 0%, rgba(250, 248, 247, 0.5) 100%);
+      border-radius: 0 170px 0 0;
+    }
+    .openTime {
+      position: relative;
+      z-index: 1;
+      flex: 1 1 auto;
+      margin-right: 60px;
+      @include screen('mobile') {
+        margin-right: 20px;
+      }
+
+      p {
+        font-size: 1.125em;
+        line-height: 1.8;
+      }
+    }
+  }
+  .subTitle {
+    font-size: 1.75em;
+    padding-bottom: 0.5em;
+    border-bottom: 2px solid #b8b8b8;
+  }
+  .today {
+    display: flex;
+    align-items: center;
+    .state {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.75em;
+      font-weight: bold;
+      color: #fff;
+      background-color: $secondaryColor;
+      margin-right: 15px;
+    }
+    .date {
+      font-size: 1.125em;
+      line-height: 1.8;
+    }
+  }
+}
+//行事曆區塊
+.calendarBlock {
+  position: relative;
+  z-index: 1;
+  width: 320px;
+  max-width: 100%;
+  background-color: #fff;
+  margin: 0 auto;
+  .calendar {
+    width: 100%;
+  }
+  .remark {
+    width: 100%;
+    background-color: #fff;
+    padding: 0 1em;
+    align-self: flex-end;
+
+    ul {
+      @include li-reset;
+      text-align: center;
+    }
+  }
+
+  .close-day,
+  .act-day {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5em;
+    max-width: 360px;
+    margin: 0 auto;
+
+    &:before {
+      content: '';
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      margin-right: 5px;
+    }
+  }
+
+  .close-day {
+    &:before {
+      background: $lightColor;
+    }
+  }
+
+  .act-day {
+    &:before {
+      background: $primaryColor;
+    }
+  }
+}
+
+//豬鼻子月曆 樣式調整
+.pignose-calendar {
+  width: 100%;
+  max-width: 100%;
+  border: none;
+  box-shadow: none;
+
+  .pignose-calendar-top {
+    padding: 1.5em 0;
+    box-shadow: none;
+
+    .pignose-calendar-top-date {
+      padding: 0.8em 0;
+    }
+  }
+
+  .pignose-calendar-header {
+    margin-top: 0;
+    padding: 0 1em;
+
+    .pignose-calendar-week {
+      &.pignose-calendar-week-sat,
+      &.pignose-calendar-week-sun {
+        //color: $color-calendar;
+      }
+    }
+  }
+
+  .pignose-calendar-body {
+    padding: 0 1em;
+  }
+
+  .pignose-calendar-unit {
+    height: 2.6em;
+    line-height: 1.5em;
+    position: relative;
+    z-index: 50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    a {
+      position: relative;
+      z-index: 40;
+      color: #555;
+      width: 2.2em;
+      height: 2.2em;
+      border-radius: 2.2em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &.pignose-calendar-unit-active {
+      a {
+        background: $primaryColor;
+        box-shadow: none;
+        color: #fff;
+      }
+    }
+
+    &.pignose-calendar-unit-sat,
+    &.pignose-calendar-unit-sun {
+      a {
+        color: #555;
+      }
+    }
+
+    //
+    &.pignose-calendar-unit-disabled {
+      a {
+        opacity: 1;
+        background: $lightColor;
+      }
+    }
+
+    .pignose-calendar-button-schedule-container {
+      .pignose-calendar-button-schedule-pin {
+        width: 2.4em;
+        height: 2.4em;
+        position: absolute;
+        left: 5%;
+        top: 0;
+        border: 1px solid $primaryColor;
+      }
+    }
+  }
+
+  .pignose-calendar-top {
+    padding: 0.65em 0;
+
+    .pignose-calendar-top-date {
+      padding: 0.65em 0;
+
+      .pignose-calendar-top-month,
+      .pignose-calendar-top-year {
+        display: inline-block;
+      }
+
+      .pignose-calendar-top-year {
+        //color: $color-word-light;
+      }
+    }
+  }
 }

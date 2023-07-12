@@ -35,7 +35,7 @@ $(function () {
     dots: false,
     infinite: true,
     speed: 300,
-    slidesToShow: 2,
+    slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
     arrow: true,
@@ -46,7 +46,55 @@ $(function () {
       {
         breakpoint: 1200,
         settings: {
-          slidesToShow: 5,
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          arrows: true,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          arrows: true,
+        },
+      },
+      {
+        breakpoint: 545,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          arrows: true,
+        },
+      },
+    ],
+  });
+
+  $('.serviceSlider').slick({
+    mobileFirst: true,
+    dots: false,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    autoplay: false,
+    arrow: true,
+    lazyLoaded: true,
+    lazyLoad: 'ondemand',
+    ease: 'ease',
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 7,
+          slidesToScroll: 1,
+          arrows: true,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 4,
           slidesToScroll: 1,
           arrows: true,
         },
@@ -157,6 +205,76 @@ $(function () {
       },
     ],
   });
+  $('.bookSlider').slick({
+    mobileFirst: false,
+    dots: false,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    autoplay: true,
+    arrow: true,
+    lazyLoaded: true,
+    lazyLoad: 'ondemand',
+    ease: 'ease',
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          arrows: true,
+        },
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          arrows: true,
+        },
+      },
+      {
+        breakpoint: 545,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: true,
+        },
+      },
+    ],
+  });
+  $('.thumbnailSlider').slick({
+    mobileFirst: true,
+    dots: false,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: false,
+    arrow: true,
+    lazyLoaded: true,
+    lazyLoad: 'ondemand',
+    ease: 'ease',
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          arrows: true,
+        },
+      },
+      {
+        breakpoint: 545,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          arrows: true,
+        },
+      },
+    ],
+  });
   // cp_photo
   $('.Slider-for').on('init reInit afterChange', function (event, slick, currentSlide) {
     var i = (currentSlide ? currentSlide : 0) + 1;
@@ -205,4 +323,31 @@ $(function () {
         e.preventDefault();
       });
   });
+
+  $('.readerLogin').click(function () {
+    $(this).parents('.readerBlock').toggleClass('open');
+  });
+});
+
+//svg 變色
+jQuery('img.svg').each(function () {
+  var $img = jQuery(this);
+  var imgID = $img.attr('id');
+  var imgClass = $img.attr('class');
+  var imgURL = $img.attr('src');
+  jQuery.get(
+    imgURL,
+    function (data) {
+      var $svg = jQuery(data).find('svg');
+      if (typeof imgID !== 'undefined') {
+        $svg = $svg.attr('id', imgID);
+      }
+      if (typeof imgClass !== 'undefined') {
+        $svg = $svg.attr('class', imgClass + ' replaced-svg');
+      }
+      $svg = $svg.removeAttr('xmlns:a');
+      $img.replaceWith($svg);
+    },
+    'xml'
+  );
 });

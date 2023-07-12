@@ -19,16 +19,16 @@ $(function () {
   /////// header選單 tab及 fix設定////////
   /*-----------------------------------*/
   var _menu = $('.menu'),
-    _megamenu = $('.megamenu');
+    _navlist = $('.navlist');
   _menu.find('li').has('ul').addClass('hasChild');
-  _megamenu.find('li').has('ul').addClass('hasChild');
+  _navlist.find('li').has('ul').addClass('hasChild');
   var liHasChild = _menu.find('li.hasChild'),
-    liHasChild2 = _megamenu.children('ul').children('li.hasChild');
+    liHasChild2 = _navlist.children('ul').children('li.hasChild');
   /*-----------------------------------*/
   ////////////// 行動版選單切換////////////
   /*-----------------------------------*/
   _body.prepend('<aside class="sidebar"><div class="m_area"><button type="button" class="sidebarClose">關閉</button></div><div class="menu_overlay"></div></aside>');
-  $('header .container').prepend('<button type="button" class="sidebarCtrl">側欄選單</button><button type="button" class="searchCtrl">查詢</button>');
+  $('header .headerTop').prepend('<button type="button" class="sidebarCtrl">側欄選單</button><button type="button" class="searchCtrl">查詢</button>');
   var menu_status = false,
     _sidebar = $('.sidebar'),
     _search = $('.search'),
@@ -89,7 +89,7 @@ $(function () {
   _menu.find('li:last>a').focusout(function () {
     _menu.find('li ul').hide();
   });
-  // megamenu
+  // navlist
   liHasChild2.children('a').keyup(function () {
     $(this).siblings('ul').fadeIn();
     $(this).siblings('ul').find('ul').fadeIn();
@@ -100,29 +100,31 @@ $(function () {
         $(this).hide();
       });
   });
-  _megamenu
+  _navlist
     .children('ul')
     .children('li')
     .keyup(function () {
       $(this).siblings().children('ul').hide();
     });
-  _megamenu.find('li:last>a').focusout(function () {
+  _navlist.find('li:last>a').focusout(function () {
     _menu.find('li ul').hide();
   });
 
   // 先複製過去
   _nav.clone().prependTo(_mArea);
   _menu.clone().prependTo(_mArea);
-  _megamenu.clone().prependTo(_mArea);
-  _search.clone().prependTo(_body).removeClass('search').addClass('m_search');
+  _navlist.clone().prependTo(_mArea);
+  //_search.clone().prependTo(_body).addClass('m_search');
+  if (ww < wwSmall) {
+  }
   var liHasChild_level1 = $('aside .menu ul').children('li.hasChild'),
     liHasChild_level2 = $('aside .menu ul ul').children('li.hasChild'),
     liHasChild_level3 = $('aside .menu ul ul ul').children('li.hasChild'),
     subMenuWidth = liHasChild.first().children('ul').outerWidth();
-  // megamenu
-  var liHasChild2_level1 = $('aside .megamenu ul').children('li.hasChild'),
-    liHasChild2_level2 = $('aside .megamenu ul ul').children('li.hasChild'),
-    liHasChild2_level3 = $('aside .megamenu ul ul ul').children('li.hasChild'),
+  // navlist
+  var liHasChild2_level1 = $('aside .navlist ul').children('li.hasChild'),
+    liHasChild2_level2 = $('aside .navlist ul ul').children('li.hasChild'),
+    liHasChild2_level3 = $('aside .navlist ul ul ul').children('li.hasChild'),
     subMenuWidth2 = liHasChild2.first().children('ul').outerWidth();
   // 切換PC/Mobile 選單
   function mobileMenu() {
@@ -172,7 +174,7 @@ $(function () {
         .on('click', function (e) {
           e.preventDefault();
         });
-      // megamenu
+      // navlist
       liHasChild2_level1.on({
         mouseenter: function () {
           $(this).children('ul').stop(true, true).slideDown('600', 'easeOutQuint');
@@ -202,7 +204,7 @@ $(function () {
         e.preventDefault();
       });
       //手機版第第一層點了不會進入內頁，拿掉第一層的連結無作用
-      $('.sidebar .megamenu .hasChild')
+      $('.sidebar .navlist .hasChild')
         .children('a')
         .off()
         .on('click', function (e) {
@@ -232,7 +234,7 @@ $(function () {
         },
       });
       liHasChild.off('click');
-      // megamenu
+      // navlist
       // 副選單滑出
       liHasChild2.on({
         mouseenter: function () {
@@ -244,7 +246,7 @@ $(function () {
         },
       });
       liHasChild2.off('click');
-      $('.megamenu').children('ul').children('li').children('ul').hide();
+      $('.navlist').children('ul').children('li').children('ul').hide();
       // 傳統menu
       if (_menu.lenght > 0) {
         liHasChild.on({
@@ -257,8 +259,8 @@ $(function () {
           },
         });
       }
-      // megamenu
-      if (_megamenu.lenght > 0) {
+      // navlist
+      if (_navlist.lenght > 0) {
         liHasChild2.on({
           mouseenter: function () {
             $(this).children('ul').stop(true, false).fadeIn();
@@ -332,7 +334,7 @@ $(function () {
       windowW = _window.outerWidth();
       if (windowW >= wwSmall && $(this).scrollTop() > stickyMenuTop) {
         $('header .menu').addClass('sticky');
-        $('.main').css('padding-top', menuH);
+        //$('.main').css('padding-top', menuH);
       } else {
         $('header .menu').removeClass('sticky');
         $('.main').removeAttr('style');
@@ -351,34 +353,6 @@ $(function () {
     });
     stickynavBar();
   }
-  if ($('header .megamenu').length > 0) {
-    var stickyMegamenuTop = Math.floor($('header .megamenu').offset().top),
-      megamenuH = Math.floor($('header .megamenu').outerHeight());
-
-    function stickyMegaNavBar() {
-      windowW = _window.outerWidth();
-      if (windowW >= wwSmall && $(this).scrollTop() > stickyMegamenuTop) {
-        $('header .megamenu').addClass('sticky');
-        $('.main').css('padding-top', megamenuH);
-      } else {
-        $('header .megamenu').removeClass('sticky');
-        $('.main').removeAttr('style');
-      }
-    }
-    _window.on('scroll', function (event) {
-      stickyMegaNavBar();
-    });
-    _window.on('resize', function (event) {
-      clearTimeout(resizeNavTimer);
-      resizeNavTimer = setTimeout(function () {
-        stickyMenuTop = Math.floor($('header .megamenu').offset().top);
-        $('.main').removeAttr('style');
-        stickyMegaNavBar();
-      }, 200);
-    });
-    stickyMegaNavBar();
-  }
-
   /*-----------------------------------*/
   //////////// notice訊息區塊 ////////////
   /*-----------------------------------*/
@@ -426,69 +400,69 @@ $(function () {
   /*-----------------------------------*/
   ////////////////多組Tab////////////////
   /*-----------------------------------*/
-  var tab_headerHeight = Math.floor($('.header').outerHeight(true));
-  var resizeTimer1;
-  _window.resize(function () {
-    clearTimeout(resizeTimer1);
-    resizeTimer1 = setTimeout(function () {
-      ww = _window.outerWidth();
-      tabSet();
-    }, 50);
-  });
+  // var tab_headerHeight = Math.floor($('.header').outerHeight(true));
+  // var resizeTimer1;
+  // _window.resize(function () {
+  //   clearTimeout(resizeTimer1);
+  //   resizeTimer1 = setTimeout(function () {
+  //     ww = _window.outerWidth();
+  //     tabSet();
+  //   }, 50);
+  // });
 
-  function tabSet() {
-    $('.tabs').each(function () {
-      var _tab = $(this),
-        _tabItem = _tab.find('.tabItem'),
-        _tabContent = _tab.find('.tabContent'),
-        tabwidth = _tab.width(),
-        tabItemHeight = _tabItem.outerHeight(),
-        tabContentHeight = _tab.find('.active').next().innerHeight(),
-        tabGutter = parseInt('4px'), // 可設定 Gutter 寬度
-        tabItemLength = _tabItem.length,
-        tabItemWidth,
-        marginLeft;
-      _tab.find('.active').next('.tabContent').show();
-      if (ww >= wwSmall) {
-        _tabContent.css('top', tabItemHeight);
-        _tab.height(tabContentHeight + tabItemHeight);
+  // function tabSet() {
+  //   $('.tabs').each(function () {
+  //     var _tab = $(this),
+  //       _tabItem = _tab.find('.tabItem'),
+  //       _tabContent = _tab.find('.tabContent'),
+  //       tabwidth = _tab.width(),
+  //       tabItemHeight = _tabItem.outerHeight(),
+  //       tabContentHeight = _tab.find('.active').next().innerHeight(),
+  //       tabGutter = parseInt('4px'), // 可設定 Gutter 寬度
+  //       tabItemLength = _tabItem.length,
+  //       tabItemWidth,
+  //       marginLeft;
+  //     _tab.find('.active').next('.tabContent').show();
+  //     if (ww >= wwSmall) {
+  //       _tabContent.css('top', tabItemHeight);
+  //       _tab.height(tabContentHeight + tabItemHeight);
 
-        tabItemWidth = tabwidth / tabItemLength - tabGutter;
-        marginLeft = (tabwidth - tabItemWidth * tabItemLength) / (tabItemLength - 1);
+  //       tabItemWidth = tabwidth / tabItemLength - tabGutter;
+  //       marginLeft = (tabwidth - tabItemWidth * tabItemLength) / (tabItemLength - 1);
 
-        _tabItem.outerWidth(tabItemWidth).css('margin-left', marginLeft);
-        _tabItem.first().css('margin-left', 0);
-        _tabItem.last().css({ position: 'absolute', top: 0, right: 0 }).outerWidth(tabItemWidth);
-      } else {
-        _tab.css('height', 'auto');
-        _tabItem.width(tabwidth);
-        _tabItem.css('margin-left', 0).last().css('position', 'relative');
-      }
-      _tabItem.focus(tabs); //改button後，前面改_tabItem
-      _tabItem.click(tabs); //改button後，前面改_tabItem
-      function tabs(e) {
-        var _tabItemNow = $(this), //改button後，原來$(this).parent(),改$(this)
-          tvp = _tab.offset().top,
-          tabIndex = _tabItemNow.index() / 2,
-          scollDistance = tvp + tabItemHeight * tabIndex - tab_headerHeight;
-        _tabItem.removeClass('active');
-        _tabItemNow.addClass('active');
-        if (ww <= wwSmall) {
-          _tabItem.not('.active').next().slideUp();
-          _tabItemNow.next().slideDown();
-          $('html,body').stop(true, false).animate({ scrollTop: scollDistance });
-        } else {
-          _tabItem.not('.active').next().hide();
-          _tabItemNow.next().show();
-          tabContentHeight = _tabItemNow.next().innerHeight();
-          _tab.height(tabContentHeight + tabItemHeight);
-        }
-        e.preventDefault();
-      }
-    });
-  }
-  $('.tabs>.tabItem:first-child>a').trigger('click');
-  tabSet();
+  //       _tabItem.outerWidth(tabItemWidth).css('margin-left', marginLeft);
+  //       _tabItem.first().css('margin-left', 0);
+  //       _tabItem.last().css({ position: 'absolute', top: 0, right: 0 }).outerWidth(tabItemWidth);
+  //     } else {
+  //       _tab.css('height', 'auto');
+  //       _tabItem.width(tabwidth);
+  //       _tabItem.css('margin-left', 0).last().css('position', 'relative');
+  //     }
+  //     _tabItem.focus(tabs); //改button後，前面改_tabItem
+  //     _tabItem.click(tabs); //改button後，前面改_tabItem
+  //     function tabs(e) {
+  //       var _tabItemNow = $(this), //改button後，原來$(this).parent(),改$(this)
+  //         tvp = _tab.offset().top,
+  //         tabIndex = _tabItemNow.index() / 2,
+  //         scollDistance = tvp + tabItemHeight * tabIndex - tab_headerHeight;
+  //       _tabItem.removeClass('active');
+  //       _tabItemNow.addClass('active');
+  //       if (ww <= wwSmall) {
+  //         _tabItem.not('.active').next().slideUp();
+  //         _tabItemNow.next().slideDown();
+  //         $('html,body').stop(true, false).animate({ scrollTop: scollDistance });
+  //       } else {
+  //         _tabItem.not('.active').next().hide();
+  //         _tabItemNow.next().show();
+  //         tabContentHeight = _tabItemNow.next().innerHeight();
+  //         _tab.height(tabContentHeight + tabItemHeight);
+  //       }
+  //       e.preventDefault();
+  //     }
+  //   });
+  // }
+  // $('.tabs>.tabItem:first-child>a').trigger('click');
+  // tabSet();
   /*-----------------------------------*/
   ///////////////置頂go to top////////////
   /*-----------------------------------*/
@@ -844,7 +818,7 @@ $(function () {
   // ---  判斷PC版選單超過畫面時左邊增加.leftSlider
   function checkUlWidth() {
     // --- 計算
-    var menuLeft = $('.header .container').offset().left;
+    var menuLeft = $('.header .headerTop').offset().left;
     var menuLi = $('.header .menu > ul > li');
     var windowWidth = $(window).outerWidth();
     var menuLiLeft;
@@ -857,3 +831,102 @@ $(function () {
   }
   checkUlWidth();
 });
+
+/*-----------------------------------*/
+////////////// tab  //////////////
+/*-----------------------------------*/
+function tabFunction(elem) {
+  const activeClass = 'active'; // --- 啟動的 class
+  const tabSet = document.querySelectorAll(elem); // --- tab名稱
+  tabSet.forEach((a) => {
+    const tabBtn = a.querySelectorAll('.tabItems button'); // --- 頁籤按鈕
+    const tabBtnLength = tabBtn.length; // --- 頁籤按鈕數量
+    const tabContent = a.querySelectorAll('.tabContentGroup .tabContent'); // --- 頁籤內容
+    tabBtn[0].classList.add('active');
+    tabContent[0].classList.add('active');
+    tabBtn.forEach((v, i) => {
+      const thisBtn = tabBtn[i]; // --- 綁定這一個頁籤按鈕
+      const thisContent = tabContent[i]; // --- 綁定這一個頁籤內容
+      const thisPrevItem = tabContent[i - 1]; // --- 綁定前一個頁籤按鈕
+      const itemAllA = thisContent.querySelectorAll('[href], input'); // --- 這一個頁籤內容所有a和input項目
+      let prevItemAllA;
+      if (thisPrevItem !== undefined) {
+        prevItemAllA = thisPrevItem.querySelectorAll('[href], input'); // --- 前一個頁籤內容所有a和input項目
+      }
+      const isFirstTab = i === 0; // --- 如果是第一個頁籤
+      const isLastTab = i === tabBtnLength - 1; // --- 如果是最後一個頁籤
+      const itemFirstA = itemAllA[0]; // --- 頁籤內容第一個a或是input
+      const itemLastA = itemAllA[itemAllA.length - 1]; // --- 頁籤內容最後一個a或是input
+      let prevItemLastA;
+      if (thisPrevItem !== undefined) {
+        prevItemLastA = prevItemAllA[prevItemAllA.length - 1]; // --- 前一個頁籤的最後一個a或是input
+      }
+      // --- thisBtn頁籤觸發focus內容裡的第一個a
+      thisBtn.addEventListener('keydown', (e) => {
+        // --- 頁籤第幾個按鈕觸發時
+        if (e.which === 9 && !e.shiftKey) {
+          // --- e.which偵測按下哪個案件，9代表tab，shiftKey代表shift
+          e.preventDefault();
+          startTab(i, tabBtn, tabContent); // --- 啟動頁籤切換功能
+          if (itemAllA.length) {
+            // --- type number = true，0是false
+            itemFirstA.focus(); // --- 第一個a或是input focus
+          } else {
+            tabBtn[i + 1].focus(); // --- 當內容沒有a或是input跳轉下一個tab
+          }
+        } else if (e.which === 9 && e.shiftKey && !isFirstTab) {
+          e.preventDefault();
+          startTab(i - 1, tabBtn, tabContent); // --- 啟動頁籤切換功能
+          if (prevItemAllA.length) {
+            prevItemLastA.focus(); // --- 前一個頁籤內容的最後一個a或是input focus
+          } else {
+            tabBtn[i - 1].focus(); // --- 當內容沒有a或是input跳轉上一個tab
+          }
+        }
+      });
+      // --- 當按下shift+tab且為該內容的第一個a或是input
+      // --- 將focus目標轉回tab頁籤上，呼叫上方功能startTab(i - 1);往前一個頁籤
+      if (itemFirstA !== undefined) {
+        itemFirstA.addEventListener('keydown', (e) => {
+          if (e.which === 9 && e.shiftKey) {
+            e.preventDefault();
+            tabBtn[i].focus();
+          }
+        });
+      }
+      // --- 當按下tab且為該內容的最後一個a或是input
+      // --- focus到下一個頁籤
+      if (itemLastA !== undefined) {
+        itemLastA.addEventListener('keydown', (e) => {
+          if (e.which === 9 && !e.shiftKey && !isLastTab) {
+            e.preventDefault();
+            tabBtn[i + 1].focus();
+          }
+        });
+      }
+      // --- 滑鼠點擊事件
+      tabBtn[i].addEventListener(
+        'click',
+        (e) => {
+          startTab(i, tabBtn, tabContent);
+        },
+        false
+      );
+    });
+  });
+  function startTab(now, tabBtn, tabContent) {
+    if (tabBtn !== undefined) {
+      tabBtn.forEach((i) => {
+        i.classList.remove(activeClass);
+      });
+      tabBtn[now].classList.add(activeClass);
+      // --- 頁籤按鈕增加指定class(active)，其他頁籤移除指定class
+      tabContent.forEach((i) => {
+        i.classList.remove(activeClass);
+      });
+      tabContent[now].classList.add(activeClass);
+      // --- 顯示當下頁籤內，隱藏其他內容
+    }
+  }
+}
+tabFunction('.tabSet'); // tab功能
