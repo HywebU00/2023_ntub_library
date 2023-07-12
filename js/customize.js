@@ -324,9 +324,9 @@ $(function () {
       });
   });
 
-  $('.readerLogin').click(function () {
-    $(this).parents('.readerBlock').toggleClass('open');
-  });
+  // $('.readerLogin').click(function () {
+  //   $(this).parents('.readerBlock').toggleClass('open');
+  // });
 });
 
 //svg 變色
