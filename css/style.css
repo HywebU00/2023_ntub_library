@@ -7952,7 +7952,6 @@ body.noscroll {
   position: relative;
   z-index: 1;
   writing-mode: vertical-rl;
-  white-space: nowrap;
   width: 60px;
   min-height: 180px;
   padding: 2.65em 0;
@@ -8059,6 +8058,11 @@ body.noscroll {
   flex-grow: 1;
   margin: 0 auto;
   width: 100%;
+}
+@media screen and (max-width: 991px) {
+  .latestNews .tabSet {
+    padding: 1.5em 1em;
+  }
 }
 .latestNews .tabContentGroup {
   margin-top: 1em;
