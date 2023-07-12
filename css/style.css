@@ -7953,6 +7953,7 @@ body.noscroll {
   z-index: 1;
   writing-mode: vertical-rl;
   width: 60px;
+  flex: 0 0 60px;
   min-height: 180px;
   padding: 2.65em 0;
   display: flex;
@@ -8131,6 +8132,11 @@ body.noscroll {
   box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
   padding: 2em;
   flex-grow: 1;
+}
+@media screen and (max-width: 991px) {
+  .tips .listGrp {
+    padding: 1.5em 1em;
+  }
 }
 .tips .listGrp ul {
   margin: 0;
