@@ -4160,7 +4160,7 @@ footer .counter em {
   box-shadow: none;
 }
 .fatfooter nav ul li ul {
-  display: block;
+  display: none;
   margin: 0;
   padding: 0 1em 0 0;
 }
@@ -7952,8 +7952,8 @@ body.noscroll {
   position: relative;
   z-index: 1;
   writing-mode: vertical-rl;
-  width: 60px;
-  flex: 0 0 60px;
+  width: 62px;
+  flex: 0 0 62px;
   min-height: 180px;
   padding: 2.65em 0;
   display: flex;
