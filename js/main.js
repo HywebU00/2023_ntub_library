@@ -113,7 +113,7 @@ $(function () {
   // 先複製過去
   _nav.clone().prependTo(_mArea);
   _menu.clone().prependTo(_mArea);
-  _navlist.clone().prependTo(_mArea);
+  //_navlist.clone().prependTo(_mArea);
   //_search.clone().prependTo(_body).addClass('m_search');
   if (ww < wwSmall) {
   }

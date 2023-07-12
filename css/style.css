@@ -2449,10 +2449,10 @@ div.tag ul li a:hover, div.tag ul li a:focus {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: url(../images/basic/top.png) no-repeat center top rgba(0, 0, 0, 0.6);
+  background: url(../images/icon/icon_arrow_up2.svg) no-repeat center top 6px rgba(0, 0, 0, 0.6);
+  background-size: 16px;
   text-align: center;
-  color: #FFF;
-  line-height: 50px;
+  color: #fff;
   text-decoration: none;
   position: fixed;
   bottom: 10px;
@@ -2460,11 +2460,16 @@ div.tag ul li a:hover, div.tag ul li a:focus {
   transition: 0.3s ease-out;
   display: none;
   z-index: 99999999;
-  text-indent: -999999px;
+  padding-top: 18px;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: bold;
 }
 .scrollToTop:hover, .scrollToTop:focus {
-  background: url(../images/basic/top.png) no-repeat center top rgba(0, 0, 0, 0.8);
+  background: url(../images/icon/icon_arrow_up2.svg) no-repeat center top 6px rgba(0, 0, 0, 0.8);
+  background-size: 16px;
   box-shadow: none;
+  color: #fff;
 }
 
 .header {
@@ -3628,7 +3633,7 @@ div.tag ul li a:hover, div.tag ul li a:focus {
 }
 .megamenu ul li ul li a {
   padding: 0.6em 1.2em;
-  color: #FFF;
+  color: #fff;
   font-weight: bold;
   box-sizing: border-box;
 }
@@ -3733,7 +3738,7 @@ div.tag ul li a:hover, div.tag ul li a:focus {
   position: absolute;
   top: 0;
   left: 0;
-  color: #FFF;
+  color: #fff;
   width: 100%;
   height: 3em;
   background: #3f2c77;
@@ -3745,7 +3750,7 @@ div.tag ul li a:hover, div.tag ul li a:focus {
   width: 100%;
   box-shadow: 0px 0px 4px RGBA(0, 0, 0, 0.4);
   margin-bottom: 1em;
-  background: #CCC;
+  background: #ccc;
 }
 .sidebar .m_area .megamenu a {
   display: block;
@@ -3765,13 +3770,13 @@ div.tag ul li a:hover, div.tag ul li a:focus {
   padding: 0.5em 1em;
   min-height: 2em;
   line-height: 2em;
-  background: #FFF;
-  border-bottom: 1px solid #CCC;
+  background: #fff;
+  border-bottom: 1px solid #ccc;
 }
 .sidebar .m_area .megamenu ul li.hasChild > a {
   padding: 0.5em 1em;
   color: #222;
-  background: #FFF;
+  background: #fff;
   padding-right: 36px;
   position: relative;
 }
@@ -3814,7 +3819,7 @@ div.tag ul li a:hover, div.tag ul li a:focus {
 .sidebar .m_area .megamenu ul li ul li li a {
   background: rgba(0, 0, 0, 0.15) !important;
   padding: 0.5em 1em 0.5em 4em !important;
-  border-bottom: 1px solid #BBB;
+  border-bottom: 1px solid #bbb;
 }
 .sidebar .m_area .megamenu ul li ul li li a:hover, .sidebar .m_area .megamenu ul li ul li li a:focus {
   background: rgba(0, 0, 0, 0.25) !important;
@@ -3835,7 +3840,6 @@ div.tag ul li a:hover, div.tag ul li a:focus {
   list-style: none;
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-bottom: none;
-  border-right: none;
 }
 .sidebar .navigation ul li {
   float: left;
@@ -3853,10 +3857,11 @@ div.tag ul li a:hover, div.tag ul li a:focus {
   line-height: 2em;
   padding: 0.5em 1em;
   font-size: 0.938em;
-  color: #FFF;
+  color: #fff;
   font-weight: bold;
   text-decoration: none;
   border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 0;
   box-sizing: border-box;
 }
 .sidebar .navigation ul li a:nth-child(odd) {
@@ -3865,41 +3870,6 @@ div.tag ul li a:hover, div.tag ul li a:focus {
 }
 .sidebar .navigation ul li a:hover, .sidebar .navigation ul li a:focus {
   background: #18102d;
-}
-.sidebar .navigation .language {
-  position: relative;
-  width: 100%;
-  position: relative;
-  min-height: 1px;
-  padding-left: 90px;
-  padding-right: 90px;
-  box-sizing: border-box;
-}
-.sidebar .navigation .language a {
-  padding: 0.6em 1em;
-  background: rgba(0, 0, 0, 0.4);
-}
-.sidebar .navigation .language a:after {
-  top: 1.3em;
-}
-.sidebar .navigation .language a:before {
-  top: 0.8em;
-}
-.sidebar .navigation .language ul {
-  width: 100%;
-  margin: 0;
-  position: relative;
-  top: 0;
-  padding: 0;
-  border: none;
-  background: none;
-}
-.sidebar .navigation .language ul li {
-  width: 100% !important;
-}
-.sidebar .navigation .language ul li a {
-  border: none;
-  background: rgba(0, 0, 0, 0.4);
 }
 .sidebar button.sidebarClose {
   position: absolute;
@@ -7647,7 +7617,7 @@ body.noscroll {
 }
 .main > section {
   position: relative;
-  margin-top: 2em;
+  margin-top: 3rem;
 }
 @media screen and (max-width: 767px) {
   .main > section:first-of-type {
@@ -7657,25 +7627,44 @@ body.noscroll {
 .main > section > .container {
   z-index: 1;
 }
+.main .ad {
+  margin-top: 0;
+}
+.main .branchInfo {
+  margin-top: 4rem;
+}
 .main.mp > section:nth-of-type(1)::before {
   content: "";
   position: absolute;
-  right: 0;
+  right: -80px;
   bottom: -90px;
-  width: 268px;
-  height: 342px;
+  width: 350px;
+  height: 350px;
   background: url(../images/bg_02.svg) right top no-repeat;
   background-size: contain;
+}
+@media screen and (max-width: 767px) {
+  .main.mp > section:nth-of-type(1)::before {
+    bottom: 320px;
+    right: -50px;
+    width: 260px;
+    height: 260px;
+  }
 }
 .main.mp > section:nth-of-type(1)::after {
   content: "";
   position: absolute;
   right: -120px;
-  top: 42%;
+  top: 250px;
   width: 184px;
   height: 184px;
   background: url(../images/bg_01.svg) center no-repeat;
   background-size: contain;
+}
+@media screen and (max-width: 767px) {
+  .main.mp > section:nth-of-type(1)::after {
+    top: 500px;
+  }
 }
 .main.mp > section:nth-of-type(2)::before {
   content: "";
@@ -7687,6 +7676,32 @@ body.noscroll {
   background: url(../images/bg_03.svg) left top no-repeat;
   background-size: contain;
 }
+@media screen and (max-width: 767px) {
+  .main.mp > section:nth-of-type(2)::before {
+    left: -20px;
+    top: -180px;
+    width: 200px;
+    height: 200px;
+  }
+}
+.main.mp > section:nth-of-type(2)::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 140px;
+  width: 378px;
+  height: 22px;
+  background: url(../images/bg_05.svg) repeat-x;
+  background-size: 21px;
+}
+@media screen and (max-width: 767px) {
+  .main.mp > section:nth-of-type(2)::after {
+    right: 40px;
+    width: 240px;
+    height: 16px;
+    background-size: 16px;
+  }
+}
 .main.mp > section:nth-of-type(4)::before {
   content: "";
   position: absolute;
@@ -7696,6 +7711,13 @@ body.noscroll {
   height: 410px;
   background: url(../images/bg_04.svg) left bottom no-repeat;
   background-size: contain;
+}
+@media screen and (max-width: 767px) {
+  .main.mp > section:nth-of-type(4)::before {
+    bottom: -150px;
+    width: 220px;
+    height: 220px;
+  }
 }
 .main.mp .events::after {
   content: "";
@@ -7707,16 +7729,45 @@ body.noscroll {
   background: url(../images/bg_01.svg) center no-repeat;
   background-size: contain;
 }
-.main.mp .branchInfo::after {
+@media screen and (max-width: 767px) {
+  .main.mp .events::after {
+    right: -100px;
+  }
+}
+.main.mp .branchInfo .container::before {
   content: "";
   position: absolute;
   right: 78px;
-  top: -32px;
+  top: -56px;
   width: 284px;
   height: 284px;
   background: url(../images/bg_03.svg) center no-repeat;
   background-size: contain;
   transform: scaleX(-1);
+}
+@media screen and (max-width: 767px) {
+  .main.mp .branchInfo .container::before {
+    content: none;
+  }
+}
+.main.mp .branchInfo .container::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: 175px;
+  width: 378px;
+  height: 22px;
+  background: url(../images/bg_06.svg) repeat-x;
+  background-size: 21px;
+}
+@media screen and (max-width: 767px) {
+  .main.mp .branchInfo .container::after {
+    right: 20px;
+    top: -50px;
+    height: 16px;
+    width: 240px;
+    background-size: 16px;
+  }
 }
 
 .innerpage > .container {
@@ -7772,6 +7823,8 @@ body.noscroll {
   font-size: 2.375rem;
   color: #3f2c77;
   margin-bottom: 0.8em;
+  position: relative;
+  z-index: 1;
 }
 .title_typeA img,
 .title_typeB img {
@@ -7802,6 +7855,21 @@ body.noscroll {
   display: none;
 }
 
+/*
+ * ----------------------------------------
+ * animation rotate-90-bottom-cw
+ * ----------------------------------------
+ */
+@keyframes rotate-90-bottom-ccw {
+  0% {
+    transform: rotate(0);
+    transform-origin: bottom;
+  }
+  100% {
+    transform: rotate(-90deg);
+    transform-origin: bottom;
+  }
+}
 .more {
   display: flex;
   justify-content: flex-end;
@@ -7939,12 +8007,12 @@ body.noscroll {
 .readerBlock .readerContent ul {
   display: flex;
   flex-wrap: wrap;
-  margin: 0.5rem 0;
+  margin: 0.25rem 0;
 }
 .readerBlock .readerContent li {
   flex-basis: 50%;
   margin-bottom: 0.5rem;
-  font-size: 0.938em;
+  font-size: 1rem;
   white-space: nowrap;
 }
 .readerBlock .readerContent li span {
@@ -8333,6 +8401,8 @@ body.noscroll {
   width: 580px;
   max-width: 100%;
   margin: 2rem;
+  position: relative;
+  z-index: 1;
 }
 @media screen and (max-width: 767px) {
   .branchInfo .tabItemGrp {
@@ -8360,6 +8430,11 @@ body.noscroll {
 @media screen and (max-width: 991px) {
   .branchInfo .infoBlock {
     padding-right: 4em;
+  }
+}
+@media screen and (max-width: 767px) {
+  .branchInfo .infoBlock {
+    margin-bottom: 0;
   }
 }
 @media screen and (max-width: 575px) {

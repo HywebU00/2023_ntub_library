@@ -52,7 +52,7 @@ body {
   }
   > section {
     position: relative;
-    margin-top: 2em;
+    margin-top: 3rem;
     @include screen('mobile') {
       &:first-of-type {
         margin-top: 0;
@@ -62,28 +62,45 @@ body {
       z-index: 1;
     }
   }
+  .ad {
+    margin-top: 0;
+  }
+  .branchInfo {
+    margin-top: 4rem;
+  }
   &.mp {
     > section {
       &:nth-of-type(1) {
         &::before {
           content: '';
           position: absolute;
-          right: 0;
+          right: -80px;
           bottom: -90px;
-          width: 268px;
-          height: 342px;
+          width: 350px;
+          height: 350px;
           background: url(../images/bg_02.svg) right top no-repeat;
           background-size: contain;
+          // transform: rotate(-90deg);
+          // animation: rotate-90-bottom-ccw 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s both;
+          @include screen('mobile') {
+            bottom: 320px;
+            right: -50px;
+            width: 260px;
+            height: 260px;
+          }
         }
         &::after {
           content: '';
           position: absolute;
           right: -120px;
-          top: 42%;
+          top: 250px;
           width: 184px;
           height: 184px;
           background: url(../images/bg_01.svg) center no-repeat;
           background-size: contain;
+          @include screen('mobile') {
+            top: 500px;
+          }
         }
       }
       &:nth-of-type(2) {
@@ -96,6 +113,28 @@ body {
           height: 276px;
           background: url(../images/bg_03.svg) left top no-repeat;
           background-size: contain;
+          @include screen('mobile') {
+            left: -20px;
+            top: -180px;
+            width: 200px;
+            height: 200px;
+          }
+        }
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 140px;
+          width: 378px;
+          height: 22px;
+          background: url(../images/bg_05.svg) repeat-x;
+          background-size: 21px;
+          @include screen('mobile') {
+            right: 40px;
+            width: 240px;
+            height: 16px;
+            background-size: 16px;
+          }
         }
       }
       &:nth-of-type(4) {
@@ -108,6 +147,11 @@ body {
           height: 410px;
           background: url(../images/bg_04.svg) left bottom no-repeat;
           background-size: contain;
+          @include screen('mobile') {
+            bottom: -150px;
+            width: 220px;
+            height: 220px;
+          }
         }
       }
     }
@@ -121,19 +165,44 @@ body {
         height: 162px;
         background: url(../images/bg_01.svg) center no-repeat;
         background-size: contain;
+        @include screen('mobile') {
+          right: -100px;
+        }
       }
     }
     .branchInfo {
-      &::after {
-        content: '';
-        position: absolute;
-        right: 78px;
-        top: -32px;
-        width: 284px;
-        height: 284px;
-        background: url(../images/bg_03.svg) center no-repeat;
-        background-size: contain;
-        transform: scaleX(-1);
+      .container {
+        &::before {
+          content: '';
+          position: absolute;
+          right: 78px;
+          top: -56px;
+          width: 284px;
+          height: 284px;
+          background: url(../images/bg_03.svg) center no-repeat;
+          background-size: contain;
+          transform: scaleX(-1);
+          @include screen('mobile') {
+            content: none;
+          }
+        }
+        &::after {
+          content: '';
+          position: absolute;
+          top: 20px;
+          right: 175px;
+          width: 378px;
+          height: 22px;
+          background: url(../images/bg_06.svg) repeat-x;
+          background-size: 21px;
+          @include screen('mobile') {
+            right: 20px;
+            top: -50px;
+            height: 16px;
+            width: 240px;
+            background-size: 16px;
+          }
+        }
       }
     }
   }
@@ -192,6 +261,8 @@ body {
   font-size: 2.375rem;
   color: $primaryColor;
   margin-bottom: 0.8em;
+  position: relative;
+  z-index: 1;
 
   img {
     display: block;
@@ -216,4 +287,24 @@ body {
 
 .hidden {
   display: none;
+}
+
+/*
+ * ----------------------------------------
+ * animation rotate-90-bottom-cw
+ * ----------------------------------------
+ */
+@keyframes rotate-90-bottom-ccw {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    -webkit-transform-origin: bottom;
+    transform-origin: bottom;
+  }
+  100% {
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    -webkit-transform-origin: bottom;
+    transform-origin: bottom;
+  }
 }
