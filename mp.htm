@@ -239,7 +239,7 @@
         </nav>
         <!-- menu End -->
         <!-- 讀者專區 未登入狀態區塊-->
-        <div class="readerBlock">
+        <div class="readerBlock" style="display: none">
           <!-- 未登入狀態的btn -->
           <button class="readerLogin">讀者登入</button>
           <div class="readerContent">
@@ -258,20 +258,21 @@
           </div>
         </div>
         <!-- 讀這專區 已登入狀態區塊-->
-        <div class="readerBlock" style="display: none">
+        <div class="readerBlock">
           <!-- 已登入狀態的登入btn 文字變成讀者名-->
           <button class="readerLogin">張家祥</button>
-          <div class="readerContent"></div>
-          <ul>
-            <li class="important">借閱中<span>10</span></li>
-            <li class="important">逾期未歸<span>1</span></li>
-            <li>違規天數<span>1</span></li>
-            <li>預約<span>5</span></li>
-            <li class="important">已到館<span>2</span></li>
-          </ul>
-          <div class="btn_grp form_inline">
-            <button class="my_study">個人書房</button>
-            <button class="loginout_btn">登出</button>
+          <div class="readerContent">
+            <ul>
+              <li>借閱中<span>10</span></li>
+              <li>逾期未歸<span>1</span></li>
+              <li>違規天數<span>1</span></li>
+              <li>預約<span>5</span></li>
+              <li>已到館<span>2</span></li>
+            </ul>
+            <div class="form_inline">
+              <button class="myStudy">個人書房</button>
+              <button class="btn-login">登出</button>
+            </div>
           </div>
         </div>
       </header>
@@ -590,9 +591,9 @@
                 <div class="sliderItem">
                   <a href="#" title="">
                     <div class="pic">
-                      <img class="svg" src="images/icon_service04.svg" alt="圖片說明7" />
+                      <img class="svg" src="images/icon_service08.svg" alt="圖片說明7" />
                     </div>
-                    <div class="serviceName">測試測試</div>
+                    <div class="serviceName">活動報名</div>
                   </a>
                 </div>
               </div>
@@ -663,9 +664,9 @@
                 <div class="sliderItem">
                   <a href="#" title="">
                     <div class="pic">
-                      <img class="svg" src="images/icon_service04.svg" alt="圖片說明7" />
+                      <img class="svg" src="images/icon_service08.svg" alt="圖片說明7" />
                     </div>
-                    <div class="serviceName">測試測試</div>
+                    <div class="serviceName">活動報名</div>
                   </a>
                 </div>
               </div>
@@ -737,6 +738,59 @@
         <section class="books wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.1s">
           <div class="container">
             <h2 class="title_typeB"><img src="images/icon_book.svg" alt="" />熱門排行榜</h2>
+            <div class="booksBlock">
+              <div class="bookSlider">
+                <div class="bookItem">
+                  <a href="#">
+                    <div class="img-container">
+                      <img src="images/book_01.jpg" />
+                    </div>
+                    <div class="bookName">1</div>
+                  </a>
+                </div>
+                <div class="bookItem">
+                  <a href="#">
+                    <div class="img-container">
+                      <img src="images/book_02.jpg" />
+                    </div>
+                    <div class="bookName">神來的時候</div>
+                  </a>
+                </div>
+                <div class="bookItem">
+                  <a href="#">
+                    <div class="img-container">
+                      <img src="images/book_03.jpg" />
+                    </div>
+                    <div class="bookName">搶救大灰鯨--看因紐特人如何幫動物朋友脫困</div>
+                  </a>
+                </div>
+                <div class="bookItem">
+                  <a href="#">
+                    <div class="img-container">
+                      <img src="images/book_04.jpg" />
+                    </div>
+                    <div class="bookName">高手的養成--股市新手必須知道的3個祕密</div>
+                  </a>
+                </div>
+                <div class="bookItem">
+                  <a href="#">
+                    <div class="img-container">
+                      <img src="images/book_05.jpg" />
+                    </div>
+                    <div class="bookName">10個月從五十音直接通過日檢1級 :裘莉的日語神器</div>
+                  </a>
+                </div>
+              </div>
+              <!--bookslider End-->
+              <div class="more">
+                <a href="#">MORE</a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="books wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.1s">
+          <div class="container">
+            <h2 class="title_typeB"><img src="images/icon_book.svg" alt="" />主題書展</h2>
             <div class="booksBlock">
               <div class="bookSlider">
                 <div class="bookItem">

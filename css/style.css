@@ -2473,7 +2473,6 @@ div.tag ul li a:hover, div.tag ul li a:focus {
   top: 0;
   left: 0;
   z-index: 99;
-  overflow: hidden;
   transition: 0.3s ease-out;
 }
 @media screen and (max-width: 767px) {
@@ -7885,6 +7884,7 @@ body.noscroll {
   position: relative;
   z-index: 1;
   writing-mode: vertical-rl;
+  white-space: nowrap;
   width: 60px;
   min-height: 180px;
   padding: 2.65em 0;
@@ -7936,7 +7936,32 @@ body.noscroll {
 .readerBlock .readerContent input[type=password]::placeholder {
   color: #cd9cc8;
 }
-.readerBlock .readerContent .btn-login {
+.readerBlock .readerContent ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0.5rem 0;
+}
+.readerBlock .readerContent li {
+  flex-basis: 50%;
+  margin-bottom: 0.5rem;
+  font-size: 0.938em;
+  white-space: nowrap;
+}
+.readerBlock .readerContent li span {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.65);
+  padding: 0 3px;
+  min-width: 22px;
+  border-radius: 4px;
+  color: #333;
+  font-size: 0.875rem;
+  font-weight: bold;
+  margin-left: 5px;
+  text-align: center;
+  line-height: 1.5;
+}
+.readerBlock .readerContent .btn-login,
+.readerBlock .readerContent .myStudy {
   background-color: rgba(255, 255, 255, 0.45);
   color: #fff;
   border: none;
@@ -7945,6 +7970,13 @@ body.noscroll {
   flex: 1 1 auto;
   min-width: 120px;
   padding: 0.4em 0.5em;
+}
+.readerBlock .readerContent .btn-login:hover,
+.readerBlock .readerContent .myStudy:hover {
+  box-shadow: rgba(0, 0, 0, 0.5) 0 0 10px;
+}
+.readerBlock .readerContent .myStudy {
+  background-color: rgba(255, 255, 255, 0.25);
 }
 
 .latestNews {
