@@ -294,7 +294,6 @@ $(function () {
         },
         mouseleave: function () {
           $(this).removeClass('open');
-          xw;
         },
       });
     }

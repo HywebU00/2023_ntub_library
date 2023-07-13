@@ -48,7 +48,7 @@ body {
   margin: 0 auto;
   // 可先設定一個中央區塊最大寬，限制accesskey對齊
   h2 {
-    line-height: 1.25em;
+    line-height: 1.5em;
   }
   > section {
     position: relative;
@@ -213,7 +213,10 @@ body {
 .innerpage {
   > .container {
     @include gutter(); //gutter 代表左右要留白
-    display: flex;
+    padding-top: 30px;
+    @include screen('tablet') {
+      @include gutter(30px);
+    }
   }
   .center_block {
     flex: none;
