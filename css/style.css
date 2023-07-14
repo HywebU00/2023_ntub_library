@@ -5621,17 +5621,17 @@ table td a {
   word-break: break-all;
 }
 table th {
-  background-color: #F3F3F3;
+  background-color: #f3f3f3;
   color: #333;
-  border: #DDD 1px solid;
+  border: #ddd 1px solid;
   text-align: center;
   white-space: nowrap;
 }
 table.table_hover tr:hover {
-  background: #F3F3F3;
+  background: #f3f3f3;
 }
 table.table_sprite tr:nth-child(even) {
-  background: #F5F5F5;
+  background: #f5f5f5;
 }
 
 @media screen and (max-width: 575px) {
@@ -5837,6 +5837,17 @@ table.table_sprite tr:nth-child(even) {
   background: url(../vendor/scrolltable/images/arrow-right.png) no-repeat right 10px center;
   content: "";
   z-index: 2;
+}
+
+.tableTypeB table th {
+  border-width: 0 0 2px 0;
+  text-align: left;
+}
+.tableTypeB table th.num, .tableTypeB table th.date {
+  text-align: center;
+}
+.tableTypeB table td {
+  border-width: 0 0 1px 0;
 }
 
 @keyframes arrow_left {
@@ -7353,7 +7364,7 @@ div.function ul li.icon_forward a:before {
 }
 
 .pagination {
-  margin: 0.5em auto;
+  margin: 1em auto;
   padding: 0;
   display: block;
   text-align: center;
