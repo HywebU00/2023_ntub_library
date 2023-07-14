@@ -492,7 +492,7 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
-        max-height: 12em;
+        max-height: 145px;
         line-height: 1.8;
       }
     }
@@ -502,13 +502,14 @@
 //各館資訊
 .branchInfo {
   position: relative;
+  padding-bottom: 60px;
   &::before {
     content: '';
     position: absolute;
     bottom: 0;
     right: 0;
     width: 48%;
-    height: calc(100% - 110px);
+    height: calc(100% - 90px);
     border-radius: 170px 0 0 0;
     background: url(../images/pic01.jpg) no-repeat right bottom;
     background-size: cover;
@@ -541,7 +542,6 @@
     max-width: 100%;
     display: flex;
     padding: 4em 8em 3em 2em;
-    margin-bottom: 58px;
     flex-wrap: wrap;
     @include screen('tablet') {
       padding-right: 4em;

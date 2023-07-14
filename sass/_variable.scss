@@ -27,8 +27,8 @@ $aColor: $primaryColor;
 $aHover: mix($aColor, #fff, 90%);
 $aFocus: mix($aColor, #fff, 90%);
 // 表單focus顏色
-$form-focus: #0066cc; //表單
-$form-btn: #0066cc; //表單
+$form-focus: $aFocus; //表單
+$form-btn: $primaryColor; //表單
 //------------------------------------------------------字型--------//
 // 字型設定
 $font-family: Lato, 'PingFang TC', 'Helvetica Neue', Helvetica, 微軟正黑體, Arial, sans-serif;

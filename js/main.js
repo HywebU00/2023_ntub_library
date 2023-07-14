@@ -354,7 +354,7 @@ $(function () {
       windowW = _window.outerWidth();
       if (windowW >= wwSmall && $(this).scrollTop() > stickyMenuTop) {
         $('header .menu').addClass('sticky');
-        //$('.main').css('padding-top', menuH);
+        $('.innerpage').css('padding-top', menuH);
       } else {
         $('header .menu').removeClass('sticky');
         $('.main').removeAttr('style');
