@@ -95,9 +95,10 @@ $menuItems: 15;
         }
       }
       ul {
-        display: flex;
+        //display: flex;
         animation: showMenu 0.3s $cubic;
         left: 0;
+        padding: 0 15px;
         li {
           flex: 1 1 100%;
           flex-direction: row;

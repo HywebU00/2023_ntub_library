@@ -3186,6 +3186,16 @@ div.tag ul li a:hover, div.tag ul li a:focus {
   border-radius: 0 90px 1px 0;
   display: inline-flex;
 }
+@media screen and (max-width: 991px) {
+  .headerContent + .menu > ul {
+    padding: 30px 15px 2px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .headerContent + .menu > ul {
+    padding: 0;
+  }
+}
 
 .sidebar {
   position: fixed;
@@ -3386,9 +3396,9 @@ div.tag ul li a:hover, div.tag ul li a:focus {
 }
 .sidebar .m_area .menu ul,
 .sidebar .m_area .megamenu ul {
-  display: flex;
   animation: showMenu 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
   left: 0;
+  padding: 0 15px;
 }
 .sidebar .m_area .menu ul li,
 .sidebar .m_area .megamenu ul li {
@@ -5223,7 +5233,7 @@ select::-ms-expand {
 }
 .form_inline label {
   vertical-align: middle;
-  margin: 0 0.5em 0 0;
+  margin: 0;
   flex: 0 1 auto;
   display: flex;
   align-items: center;
@@ -5597,11 +5607,15 @@ table {
     width: 100%;
   }
 }
+table + table {
+  margin-top: 2em;
+}
 table caption {
   font-weight: bold;
   text-align: left;
   font-size: 1.125rem;
   margin-bottom: 0.5em;
+  color: #6b246b;
 }
 table caption .summary {
   display: block;
@@ -7596,6 +7610,7 @@ div.function ul li.icon_forward a:before {
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 100px;
 }
 
 body {
@@ -7965,7 +7980,7 @@ body.noscroll {
   right: -380px;
   top: 20%;
   display: flex;
-  z-index: 99;
+  z-index: 110;
   max-width: 100%;
   width: 440px;
   font-size: 1.125em;

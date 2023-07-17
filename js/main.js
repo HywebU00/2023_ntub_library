@@ -283,7 +283,7 @@ $(function () {
     ww = _window.outerWidth();
     var readerBlock = $('.readerBlock'),
       readerLogin = $('.readerLogin');
-    if (ww < wwSmall) {
+    if (ww < wwMedium) {
       readerLogin.off().on('click', function (e) {
         $(this).parent(readerBlock).stop(true, true).toggleClass('open');
       });

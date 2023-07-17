@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" class="no-js">
+  <head>
+    <meta name="robots" content="noindex" />
+    <!-- 使用 noindex 禁止 Google 搜尋建立索引，套版時請工程師刪掉這行 -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>國立台北商業大學圖書館</title>
+    <!--HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries [if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <!-- slick css-->
+    <link rel="stylesheet" type="text/css" href="vendor/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="vendor/slick/slick-theme.css" />
+    <link href="css/animate.css" rel="stylesheet" />
+    <!--pignose-->
+    <link rel="stylesheet" href="vendor/pg_calendar/css/pignose.calendar.min.css" />
+    <!-- 燈箱facybox -->
+    <link rel="stylesheet" type="text/css" href="vendor/fancybox/jquery.fancybox.min.css" />
+    <!-- hyUI css -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- favicon -->
+    <link href="images/favicon.png" rel="icon" type="image/x-icon" />
+  </head>
+
+  <body>
+    <!-- 直接跳主內容區 -->
+    <a class="goCenter" href="#center" tabindex="1">按Enter到主內容區</a>
+    <!-- wrapper Start -->
+    <div class="wrapper">
+      <!-- header Start -->
+      <header class="header">
+        <a class="accesskey" href="#aU" id="aU" accesskey="U" title="網站標題" tabindex="2">:::</a>
+        <div class="headerTop">
+          <h1>
+            <a href="index.htm"><img src="images/logo.svg" alt="網站標題" /></a>
+          </h1>
+          <!-- navigation Start -->
+          <nav class="navigation" role="navigation" aria-label="Site">
+            <!-- 新增div navlist -->
+            <div class="navlist">
+              <ul>
+                <li><a href="#">網站導覽</a></li>
+                <li><a href="#">學校首頁</a></li>
+                <li>
+                  <a href="#">身份別</a>
+                  <ul>
+                    <li><a href="#">教師</a></li>
+                    <li><a href="#">學生</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">English</a></li>
+              </ul>
+            </div>
+          </nav>
+          <!-- navigation End -->
+        </div>
+        <!-- noscript -->
+        <noscript>
+          您的瀏覽器不支援JavaScript語法，JavaScript語法並不影響內容的陳述。您可使用按鍵盤上的Ctrl鍵+ (+)鍵放大/(-)鍵縮小來改變字型大小；回到上一頁可使用瀏覽器提供的 Alt+左方向鍵(←) 快速鍵功能；列印可使用瀏覽器提供的(Ctrl+P)功能。您的瀏覽器，不支援script語法，若您的瀏覽器無法支援請點選此超連結
+          <a href="#">網站導覽</a>
+        </noscript>
+        <!-- menu Start -->
+        <nav class="menu" role="navigation" aria-label="About page">
+          <ul>
+            <li>
+              <a href="#">關於本館</a>
+              <ul>
+                <li><a href="#">第二層選單</a></li>
+                <li><a href="#">第二層選單</a></li>
+              </ul>
+            </li>
+            <li><a href="#">資料查詢</a></li>
+            <li>
+              <a href="#">服務項目</a>
+              <ul>
+                <li><a href="#">第二層選單</a></li>
+                <li><a href="#">第二層選單</a></li>
+                <li><a href="#">第二層選單</a></li>
+                <li><a href="#">第二層選單</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">電子資源</a>
+              <ul>
+                <li><a href="#">第二層選單</a></li>
+                <li><a href="#">第二層選單</a></li>
+                <li>
+                  <a href="#">第二層有下層</a>
+                  <ul>
+                    <li><a href="#">第三層選單</a></li>
+                    <li><a href="#">第三層選單</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">第二層選單</a></li>
+              </ul>
+            </li>
+            <li><a href="#">北商知識產出</a></li>
+            <li><a href="#">考古題</a></li>
+            <li><a href="#">校史館</a></li>
+          </ul>
+        </nav>
+        <!-- menu End -->
+        <!-- 讀者專區 未登入狀態區塊-->
+        <div class="readerBlock" style="display: none">
+          <!-- 未登入狀態的btn -->
+          <a href="javascript:;" class="readerLogin">讀者登入</a>
+          <div class="readerContent">
+            <div class="input-i">
+              <i class="i_man2"></i>
+              <input name="username" type="text" placeholder="請輸入帳號" />
+            </div>
+            <div class="input-i">
+              <i class="i_lock2"></i>
+              <input name="password" type="password" placeholder="請輸入密碼" />
+            </div>
+            <div class="form_inline">
+              <button type="button" class="btn-login">登入</button>
+              <label><input type="checkbox" />記住帳號</label>
+            </div>
+          </div>
+        </div>
+        <!-- 讀這專區 已登入狀態區塊-->
+        <div class="readerBlock">
+          <!-- 已登入狀態的登入btn 文字變成讀者名-->
+          <button class="readerLogin">張家祥</button>
+          <div class="readerContent">
+            <ul>
+              <li>借閱中<span>10</span></li>
+              <li>逾期未歸<span>1</span></li>
+              <li>違規天數<span>1</span></li>
+              <li>預約<span>5</span></li>
+              <li>已到館<span>2</span></li>
+            </ul>
+            <div class="form_inline">
+              <button class="myStudy">個人書房</button>
+              <button class="btn-login">登出</button>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- header End -->
+      <!-- main Start -->
+      <div id="center" class="main innerpage">
+        <a class="accesskey" href="#aC" id="aC" accesskey="C" title="主要內容區">:::</a>
+        <div class="container">
+          <!-- breadcrumb路徑 -->
+          <div class="breadcrumb">
+            <ul>
+              <li><a href="#">首頁</a></li>
+              <li><a href="#">節點</a></li>
+              <li>節點</li>
+            </ul>
+          </div>
+          <!-- h2節點 -->
+          <h2 class="title">節點標題</h2>
+          <!-- function_panel -->
+          <div class="function_panel">
+            <div class="publish_time"><span>發布日期：</span><time>2023-01-01</time></div>
+            <!-- 文字大小 -->
+            <div class="font_size">
+              <span>字型大小：</span>
+              <!-- 英文用<span>font-size：</span> -->
+              <ul>
+                <li><a href="#" class="small">小</a></li>
+                <li><a href="#" class="medium">中</a></li>
+                <li><a href="#" class="large">大</a></li>
+              </ul>
+            </div>
+            <!-- function功能區塊 -->
+            <div class="function">
+              <ul>
+                <li class="back"><a href="javascript:history.back()">回上一頁</a></li>
+                <li class="print"><a href="#">友善列印</a></li>
+                <li class="forward"><a href="#">轉寄友人</a></li>
+              </ul>
+            </div>
+            <!-- 社群分享 -->
+            <div class="share">
+              <ul>
+                <li>
+                  <a href="#"><img src="images/basic/icon_facebook.svg" alt="facebook" /></a>
+                </li>
+                <li>
+                  <a href="#"><img src="images/basic/icon_twitter.svg" alt="twitter" /></a>
+                </li>
+                <li>
+                  <a href="#"><img src="images/basic/icon_line.svg" alt="line" /></a>
+                </li>
+                <li>
+                  <a href="#"><img src="images/basic/icon_youtube.svg" alt="youtube" /></a>
+                </li>
+                <li>
+                  <a href="#"><img src="images/basic/icon_instagram.svg" alt="instagram" /></a>
+                </li>
+                <li>
+                  <a href="#"><img src="images/basic/icon_linkedin.svg" alt="LinkedIn" /></a>
+                </li>
+                <li>
+                  <a href="#"><img src="images/basic/icon_rss.svg" alt="RSS" /></a>
+                </li>
+                <li>
+                  <a href="#"><img src="images/basic/icon_plurk.svg" alt="Plurk" /></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- LP Start -->
+          <section class="lp">
+            <!-- category -->
+            <div class="category">
+              <ul>
+                <li><a href="#cate01" class="active">標籤1</a></li>
+                <li><a href="#cate02">標籤2</a></li>
+                <li><a href="#cate03">標籤3</a></li>
+              </ul>
+            </div>
+            <div class="table_list">
+              <table id="cate01">
+                <caption>
+                  標籤1
+                </caption>
+                <thead>
+                  <tr>
+                    <th>職務</th>
+                    <th>姓名</th>
+                    <th>業務職掌</th>
+                    <th>電話/樓層/Email</th>
+                    <th>職務代理人</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td data-title="職務" class="">專員</td>
+                    <td data-title="姓名">王大明</td>
+                    <td data-title="業務職掌">
+                      策劃及督導下列讀者服務業務<br />
+                      1. 讀者經營<br />
+                      2. 館務行政<br />
+                      3. 校史業務<br />
+                      4. 流通櫃檯業務<br />
+                      5. 活動策展<br />
+                      6. 館際合作<br />
+                    </td>
+                    <td data-title="電話/樓層/Email"></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td data-title="職務" class="">專員</td>
+                    <td data-title="姓名">張小美</td>
+                    <td data-title="業務職掌">
+                      策劃及督導下列讀者服務業務<br />
+                      1. 讀者經營<br />
+                      2. 館務行政<br />
+                    </td>
+                    <td data-title="電話/樓層/Email"></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <table id="cate02">
+                <caption>
+                  標籤2
+                </caption>
+                <thead>
+                  <tr>
+                    <th>職務</th>
+                    <th>姓名</th>
+                    <th>業務職掌</th>
+                    <th>電話/樓層/Email</th>
+                    <th>職務代理人</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td data-title="職務" class="">專員</td>
+                    <td data-title="姓名">王大明</td>
+                    <td data-title="業務職掌">
+                      策劃及督導下列讀者服務業務<br />
+                      1. 讀者經營<br />
+                      2. 館務行政<br />
+                      3. 校史業務<br />
+                      4. 流通櫃檯業務<br />
+                      5. 活動策展<br />
+                      6. 館際合作<br />
+                    </td>
+                    <td data-title="電話/樓層/Email"></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td data-title="職務" class="">專員</td>
+                    <td data-title="姓名">張小美</td>
+                    <td data-title="業務職掌">
+                      策劃及督導下列讀者服務業務<br />
+                      1. 讀者經營<br />
+                      2. 館務行政<br />
+                    </td>
+                    <td data-title="電話/樓層/Email"></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <table id="cate03">
+                <caption>
+                  標籤3
+                </caption>
+                <thead>
+                  <tr>
+                    <th>職務</th>
+                    <th>姓名</th>
+                    <th>業務職掌</th>
+                    <th>電話/樓層/Email</th>
+                    <th>職務代理人</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td data-title="職務" class="">專員</td>
+                    <td data-title="姓名">王大明</td>
+                    <td data-title="業務職掌">
+                      策劃及督導下列讀者服務業務<br />
+                      1. 讀者經營<br />
+                      2. 館務行政<br />
+                      3. 校史業務<br />
+                      4. 流通櫃檯業務<br />
+                      5. 活動策展<br />
+                      6. 館際合作<br />
+                    </td>
+                    <td data-title="電話/樓層/Email"></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td data-title="職務" class="">專員</td>
+                    <td data-title="姓名">張小美</td>
+                    <td data-title="業務職掌">
+                      策劃及督導下列讀者服務業務<br />
+                      1. 讀者經營<br />
+                      2. 館務行政<br />
+                    </td>
+                    <td data-title="電話/樓層/Email"></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+          <!-- LP End -->
+          <!-- Pagination -->
+          <div class="pagination">
+            <form action="">
+              <div class="form_inline">
+                <div class="total">
+                  共<span>308</span>筆資料，第<span>1/18</span>頁，每頁顯示
+                  <select name="" id="" aria-label="每頁顯示">
+                    <option value="">10</option>
+                    <option value="">20</option>
+                    <option value="">30</option>
+                    <option value="">40</option>
+                  </select>
+                  筆， <input type="button" value="確定" class="btn btn-submit" />
+                </div>
+              </div>
+            </form>
+            <ul class="page">
+              <li class="first"><a href="#" title="第一頁">第一頁 </a></li>
+              <li class="prev"><a href="#" title="回上一頁">回上一頁 </a></li>
+              <li class="active"><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">5</a></li>
+              <li><a href="#">6</a></li>
+              <li><a href="#">7</a></li>
+              <li><a href="#">8</a></li>
+              <li><a href="#">9</a></li>
+              <li><a href="#">10</a></li>
+              <li class="next"><a href="#" title="下一頁">下一頁 </a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- fatfooter Start -->
+      <section class="fatfooter">
+        <div class="container">
+          <button type="button" name="展開選單/OPEN" aria-label="導覽選單展開/收合" class="btn btn-fatfooter close">收合</button>
+          <nav aria-label="fatfooter的導航列">
+            <ul>
+              <li>
+                <a href="#">關於本館</a>
+                <ul>
+                  <li><a href="#">館內空間3D導覽</a></li>
+                  <li><a href="#">本校地圖</a></li>
+                  <li><a href="#">本館大事記</a></li>
+                  <li><a href="#">館藏及服務統計</a></li>
+                  <li><a href="#">相關規定</a></li>
+                  <li><a href="#">學期中開館時間及休館日</a></li>
+                  <li><a href="#">成員與職掌</a></li>
+                  <li><a href="#">各式申請表單下載</a></li>
+                  <li><a href="#">資源利用及導覽影片</a></li>
+                  <li><a href="#">數位校史館</a></li>
+                  <li><a href="#">校史館文物徵集FB</a></li>
+                  <li><a href="#">會議紀錄</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">資料查詢</a>
+                <ul>
+                  <li><a href="#">館藏書刊查詢</a></li>
+                  <li><a href="#">電子資源整合查詢</a></li>
+                  <li><a href="#">北商博碩士論文查詢</a></li>
+                  <li><a href="#">館藏期刊清單</a></li>
+                  <li><a href="#">各系所核心館藏期刊</a></li>
+                  <li><a href="#">討論室等空間預約</a></li>
+                  <li><a href="#">館藏桌遊教具</a></li>
+                  <li><a href="#">本館新購編目中圖書</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">服務項目</a>
+                <ul>
+                  <li><a href="#">館際合作</a></li>
+                  <li><a href="#">全國文獻傳遞服務系統</a></li>
+                  <li><a href="#">推薦書刊</a></li>
+                  <li><a href="#">無線網路連線方式</a></li>
+                  <li><a href="#">二手教科書捐贈及交換</a></li>
+                  <li><a href="#">本校行事曆</a></li>
+                  <li><a href="#">遺失物清單</a></li>
+                  <li><a href="#">紫外線圖書除菌機使用</a></li>
+                  <li><a href="#">圖書館服務標準作業程序SOP</a></li>
+                  <li><a href="#">館藏桌遊教具借用</a></li>
+                  <li><a href="#">圖書館資源利用示意圖</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">電子資源</a>
+                <ul>
+                  <li><a href="#">中文及語言學習資料庫</a></li>
+                  <li><a href="#">西文資料庫</a></li>
+                  <li><a href="#">電子期刊</a></li>
+                  <li><a href="#">本館訂閱西文電子期刊</a></li>
+                  <li><a href="#">電子書</a></li>
+                  <li><a href="#">書目管理軟體</a></li>
+                  <li><a href="#">雙語詞彙、學術名詞暨辭書資訊網</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">北商知識產出</a>
+                <ul>
+                  <li><a href="#">北商博碩士論文系統</a></li>
+                  <li><a href="#">北商學報</a></li>
+                  <li><a href="#">電子校刊</a></li>
+                  <li><a href="#">北商行政簡訊</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">考古題</a>
+                <ul>
+                  <li><a href="#">本校研究所考古題</a></li>
+                  <li><a href="#">本校二技、四技轉學考古題</a></li>
+                  <li><a href="#">線上學習測驗平台（應外系提供）</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">校史館</a>
+                <ul>
+                  <li><a href="#">館際合作</a></li>
+                  <li><a href="#">全國文獻傳遞服務系統</a></li>
+                  <li><a href="#">推薦書刊</a></li>
+                  <li><a href="#">無線網路連線方式 </a></li>
+                  <li><a href="#">二手教科書捐贈及交換</a></li>
+                  <li><a href="#">本校行事曆</a></li>
+                  <li><a href="#">遺失物清單</a></li>
+                  <li><a href="#">紫外線圖書除菌機使用</a></li>
+                  <li><a href="#">圖書館服務標準作業程序SOP</a></li>
+                  <li><a href="#">館藏桌遊教具借用</a></li>
+                  <li><a href="#">圖書館資源利用示意圖</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </section>
+      <!-- fatfooter End -->
+      <!-- footer Start-->
+      <footer>
+        <div class="container">
+          <a class="accesskey" href="#aZ" id="aZ" accesskey="Z" title="頁尾區">:::</a>
+
+          <div class="footer_info">
+            <ul class="compus">
+              <li>台北校區 校址:臺北市中正區100濟南路一段321號 總機 : (02)33222777 流通服務 : (02)23226148 　 <br />參考諮詢 : (02)23226156、23226154 電子郵件 : <a href="mailto:library@ntub.edu.tw">library@ntub.edu.tw</a></li>
+              <li>桃園校區 校址 : 桃園市平鎮區福龍路一段100號 電話：(03)4506333 流通服務 : (03)4506333轉8085</li>
+            </ul>
+          </div>
+          <span class="counter">瀏覽人次：<em>46476653</em></span>
+        </div>
+      </footer>
+      <!-- footer End -->
+    </div>
+    <a href="javascript:;" class="scrollToTop" title="回頁首">top</a>
+    <!-- JQ -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <!-- 外掛 plugin js -->
+    <!-- ease -->
+    <script src="vendor/jquery.easing.min.js"></script>
+    <!-- slick -->
+    <script src="vendor/slick/slick.min.js "></script>
+    <!-- lazyload -->
+    <script src="vendor/lazyload/lazyload.js"></script>
+    <!-- picturefill -->
+    <script src="vendor/picturefill/picturefill.min.js" async></script>
+    <!-- pg_calendar -->
+    <script src="vendor/pg_calendar/js/pignose.calendar.full.js"></script>
+    <!-- fancy -->
+    <script src="vendor/fancybox/jquery.fancybox.min.js"></script>
+    <!-- wow js -->
+    <script src="js/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
+    <script>
+      $(function () {
+        $('.calendar').pignoseCalendar({
+          lang: 'ch',
+          disabledDates: ['2023-07-03', '2023-07-10', '2023-07-17', '2023-07-24', '2023-07-31'],
+        });
+      });
+    </script>
+    <!-- hyUI -->
+    <script src="js/main.js"></script>
+    <!-- 客製js -->
+    <script src="js/customize.js"></script>
+  </body>
+</html>
