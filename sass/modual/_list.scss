@@ -1,99 +1,190 @@
 .lp {
-    table {
-        td {
-            a {
-                @include aSetting_nocolor;
-            }
-            &.date {
-                text-align: center;
-                color: #666;
-                @include screen('mobile') {
-                    text-align: left;
-                }
-            }
-            &.num {
-                text-align: center;
-                color: #666;
-                @include screen('mobile') {
-                    text-align: left;
-                }
-            }
+  table {
+    td {
+      a {
+        @include aSetting_nocolor;
+      }
+      &.date {
+        text-align: center;
+        color: #666;
+        @include screen('mobile') {
+          text-align: left;
         }
-    }
-    .list {
-        &>ul, ol {
-            list-style-type: none;
-            padding: 0;
-            border-top: 2px solid $primaryColor;
-            &>li {
-                padding: 1em 0;
-                border-bottom: 1px solid #DDD;
-                position: relative; // outline: 1px solid blue;
-                .tag {
-                    margin-left: 2em;
-                }
-                &>a {
-                    display: block;
-                    padding-left: 2em;
-                    position: relative;
-                    line-height: 1.45em;
-                    color: $color-word;
-                    &:hover {
-                        color: $aHover;
-                    }
-                    .num {
-                        width: 1.5em;
-                        text-align: right;
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        &:after {
-                            content: ".";
-                            display: inline-block;
-                        }
-                    }
-                }
-                span.dept {
-                    display: inline-block;
-                    font-size: .938em;
-                    @include screen("mobile") {
-                        display: block;
-                    }
-                }
-                time {
-                    display: block;
-                    color: #AAA;
-                    font-size: .938em;
-                }
-            }
+      }
+      &.num {
+        text-align: center;
+        color: #666;
+        @include screen('mobile') {
+          text-align: left;
         }
+      }
     }
+  }
+  .list {
+    & > ul,
+    ol {
+      list-style-type: none;
+      padding: 0;
+      border-top: 2px solid $primaryColor;
+      & > li {
+        padding: 1em 0;
+        border-bottom: 1px solid #ddd;
+        position: relative; // outline: 1px solid blue;
+        .tag {
+          margin-left: 2em;
+        }
+        & > a {
+          display: block;
+          padding-left: 2em;
+          position: relative;
+          line-height: 1.45em;
+          color: $color-word;
+          &:hover {
+            color: $aHover;
+          }
+          .num {
+            width: 1.5em;
+            text-align: right;
+            position: absolute;
+            top: 0;
+            left: 0;
+            &:after {
+              content: '.';
+              display: inline-block;
+            }
+          }
+        }
+        span.dept {
+          display: inline-block;
+          font-size: 0.938em;
+          @include screen('mobile') {
+            display: block;
+          }
+        }
+        time {
+          display: block;
+          color: #aaa;
+          font-size: 0.938em;
+        }
+      }
+    }
+  }
 }
 
 // .album {
-//     margin: 1em auto;
-//     ul {
-//         @include li-reset;
-//         display:flex;
-//         flex-direction:row;
-//         justify-content:flex-start;
-//         align-items:stretch;
-//         flex-wrap:wrap;
-//         li{
-//             flex:0 0 30%;
-//             margin:0 1.66% 3%;
-//             display:flex;
-//             flex-direction:row;
-//             align-content: stretch;
-//             @include screen('tablet'){
-//                 flex:0 0 46%;
-//                 margin:0 2% 3%;
-//             }
-//             @include screen('mobile'){
-//                 flex:0 0 96%;
-//                 margin:0 3% 5%;
-//             }
-            
-//         }
+//   margin: 1em auto;
+//   ul {
+//     @include li-reset;
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: flex-start;
+//     align-items: stretch;
+//     flex-wrap: wrap;
+//     li {
+//       flex: 0 0 30%;
+//       margin: 0 1.66% 3%;
+//       display: flex;
+//       flex-direction: row;
+//       align-content: stretch;
+//       @include screen('tablet') {
+//         flex: 0 0 46%;
+//         margin: 0 2% 3%;
+//       }
+//       @include screen('mobile') {
+//         flex: 0 0 96%;
+//         margin: 0 3% 5%;
+//       }
 //     }
+//   }
 // }
+//圖片列表頁
+.album {
+  margin: 2em auto;
+
+  > ul {
+    @include li-reset;
+    display: flex;
+    flex-wrap: wrap;
+
+    > li {
+      flex-basis: 33.33333%;
+      overflow: visible;
+      margin-bottom: 2em;
+
+      @include screen('tablet') {
+        flex-basis: 50%;
+      }
+
+      @include screen('xs_mobile') {
+        flex-basis: 100%;
+      }
+
+      a {
+        display: block;
+        margin: 0 1em;
+        height: 100%;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 5px 8px 0px;
+        &:hover {
+          box-shadow: rgba(99, 99, 99, 0.2) 0px 5px 15px 0px;
+          .img-container {
+            img {
+              transform: scale(1.05);
+            }
+          }
+          .albumTitle {
+            color: $aHover;
+          }
+        }
+      }
+      .img-container {
+        &:after {
+          content: '';
+          display: block;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          height: 50px;
+          background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+        }
+
+        img {
+          object-fit: cover;
+          transition: 0.3s;
+        }
+      }
+
+      .caption {
+        width: 90%;
+        margin: 0 auto;
+        padding-bottom: 1em;
+        position: relative;
+
+        .picture_detial {
+          color: #fff;
+          position: absolute;
+          top: -38px;
+          left: 0;
+          width: 100%;
+          font-size: 0.938em;
+          display: flex;
+          justify-content: space-between;
+          i {
+            margin-right: 0.5em;
+          }
+        }
+        time {
+          display: block;
+          font-size: 0.938em;
+          color: lighten($color-word, 20);
+          margin: 0.5em 0;
+        }
+
+        .albumTitle {
+          color: $primaryColor;
+          margin: 0.5em 0;
+        }
+      }
+    }
+  }
+}
