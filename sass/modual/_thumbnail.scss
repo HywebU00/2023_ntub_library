@@ -1,3 +1,23 @@
+.thumbnailGrp {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2em -1em;
+  .thumbnail {
+    flex-basis: 25%;
+    overflow: visible;
+    margin-bottom: 2em;
+    @include screen('tablet') {
+      flex-basis: 50%;
+    }
+    @include screen('xs_mobile') {
+      flex-basis: 100%;
+    }
+    a {
+      margin: 0 1em;
+    }
+  }
+}
+
 .thumbnail {
   width: 100%;
   //overflow: hidden;
@@ -5,13 +25,18 @@
   border-radius: 4px;
   &:hover {
     transform: scale(1.01);
-    box-shadow: 0 5px 10px -7px rgba(0, 0, 0, 0.5);
   }
 
   a {
     display: block;
+    border-radius: 4px;
     @include aSetting(#555);
     position: relative;
+    overflow: hidden;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 5px 8px 0px;
+    &:hover {
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 5px 15px 0px;
+    }
     &:focus {
       &:before {
         content: '';
@@ -28,8 +53,13 @@
     }
   }
   .img-container {
-    @include aspect-ratio(4, 3);
+    aspect-ratio: 16/9;
+    border-radius: 0;
+
     margin-bottom: 0.5em;
+    img {
+      object-fit: cover;
+    }
   }
   h2,
   h3,
@@ -41,9 +71,19 @@
     font-size: 1.375em;
   }
   .caption {
+    width: 90%;
+    margin: 0 auto;
+    padding-bottom: 0.5rem;
     p {
       margin: 0.5em 0 0 0;
       color: #726a6a;
+      display: -webkit-box;
+      -webkit-line-clamp: 5;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-height: 145px;
+      line-height: 1.8;
     }
     time {
       font-size: 0.875em;
