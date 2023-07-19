@@ -95,6 +95,7 @@ $menuItems: 15;
         }
       }
       ul {
+        @include li-reset;
         //display: flex;
         animation: showMenu 0.3s $cubic;
         left: 0;

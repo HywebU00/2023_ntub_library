@@ -25,7 +25,7 @@
 @import 'modual/_menu';
 @import 'modual/_menuSidebar'; //menu
 @import 'modual/_nav'; //megamenu
-@import 'modual/_fixed_sidebar'; //固定側邊欄
+//@import 'modual/_fixed_sidebar'; //固定側邊欄
 @import 'modual/_footer'; //footer
 @import 'modual/_fatfooter'; //fatfooter
 // @import "modual/_form";					//表單-麥莉
@@ -38,15 +38,15 @@
 @import 'modual/_modal'; //pop視窗
 @import 'modual/_slick'; //slick
 @import 'modual/_function_panel'; //內頁功能面板
-@import 'modual/_marquee'; //跑馬燈
+//@import 'modual/_marquee'; //跑馬燈
 @import 'modual/_paginations'; //分頁
 @import 'modual/_notice'; //提示
 @import 'modual/_accordion.scss'; //收合式選單
-// @import "_lightbox";					//燈箱      買fancybox
+// @import "_lightbox";					//燈箱
 // 頁面
 @import 'page/_template'; //版型初始設定
 @import 'page/_mp'; //首頁
 @import 'page/_cp'; //CP
 @import 'page/_sitemap'; //Sitemap
-@import 'page/_left_block'; //左欄left_block
+//@import 'page/_left_block'; //左欄left_block
 @import 'common/_print'; //列印樣式
