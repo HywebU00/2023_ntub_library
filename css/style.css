@@ -7875,12 +7875,13 @@ body.noscroll {
 .main.mp > section:nth-of-type(1)::before {
   content: "";
   position: absolute;
-  right: -80px;
-  bottom: -90px;
+  right: -270px;
+  bottom: 80px;
   width: 350px;
   height: 350px;
   background: url(../images/bg_02.svg) right top no-repeat;
   background-size: contain;
+  animation: rotate-90-bottom-ccw 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 3s both;
 }
 @media screen and (max-width: 767px) {
   .main.mp > section:nth-of-type(1)::before {
@@ -7908,12 +7909,13 @@ body.noscroll {
 .main.mp > section:nth-of-type(2)::before {
   content: "";
   position: absolute;
-  left: 0;
+  left: -276px;
   top: -145px;
   width: 276px;
   height: 276px;
   background: url(../images/bg_03.svg) left top no-repeat;
   background-size: contain;
+  animation: rotate-90-br-cw 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 3.5s both;
 }
 @media screen and (max-width: 767px) {
   .main.mp > section:nth-of-type(2)::before {
@@ -8115,12 +8117,34 @@ body.noscroll {
  */
 @keyframes rotate-90-bottom-ccw {
   0% {
+    opacity: 0;
     transform: rotate(0);
     transform-origin: bottom;
   }
   100% {
+    opacity: 1;
     transform: rotate(-90deg);
     transform-origin: bottom;
+  }
+}
+@keyframes rotate-90-br-cw {
+  0% {
+    transform: rotate(0);
+    transform-origin: 100% 100%;
+  }
+  100% {
+    transform: rotate(90deg);
+    transform-origin: 100% 100%;
+  }
+}
+@keyframes rotate-90-tl-ccw {
+  0% {
+    transform: rotate(0);
+    transform-origin: 0% 0%;
+  }
+  100% {
+    transform: rotate(-90deg);
+    transform-origin: 0% 0%;
   }
 }
 .more {
