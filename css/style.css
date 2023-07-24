@@ -8180,7 +8180,7 @@ body.noscroll {
   border-radius: 48px;
   background: rgba(255, 255, 255, 0.8);
   box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
-  padding: 2em;
+  padding: 2em 2em;
   flex-grow: 1;
   margin: 0 auto;
   width: 100%;
@@ -8255,8 +8255,10 @@ body.noscroll {
   border-radius: 48px;
   background: rgba(255, 255, 255, 0.8);
   box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
-  padding: 2em;
+  padding: 2em 2em;
   flex-grow: 1;
+  margin: 0 auto;
+  width: 100%;
 }
 @media screen and (max-width: 991px) {
   .tips .listGrp {
@@ -8308,6 +8310,9 @@ body.noscroll {
   background: rgba(255, 255, 255, 0.8);
   box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
   padding: 2em 3em;
+  flex-grow: 1;
+  margin: 0 auto;
+  width: 100%;
 }
 @media screen and (max-width: 991px) {
   .serviceBlock {
@@ -8380,8 +8385,11 @@ body.noscroll {
   background: rgba(255, 255, 255, 0.8);
   box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
   padding: 2em 3em;
+  flex-grow: 1;
+  margin: 0 auto;
+  width: 100%;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 991px) {
   .booksBlock {
     padding: 2em 1em;
   }

@@ -1,6 +1,15 @@
-/////////////////////////////////////////////////////////以下為demo範例///
-// 首頁區塊設定
-// more按鈕
+@mixin boxStyleA($paddingNum1, $paddingNum2, $paddingNum3, $paddingNum4) {
+  border-radius: 48px;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+  padding: $paddingNum1 $paddingNum2;
+  flex-grow: 1;
+  margin: 0 auto;
+  width: 100%;
+  @include screen('tablet') {
+    padding: $paddingNum3 $paddingNum4;
+  }
+} // more按鈕
 .more {
   display: flex;
   justify-content: flex-end;
@@ -176,16 +185,7 @@
   display: flex;
   flex-direction: column;
   .tabSet {
-    border-radius: 48px;
-    background: rgba(255, 255, 255, 0.8);
-    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
-    padding: 2em;
-    flex-grow: 1;
-    margin: 0 auto;
-    width: 100%;
-    @include screen('tablet') {
-      padding: 1.5em 1em;
-    }
+    @include boxStyleA(2em, 2em, 1.5em, 1em);
   }
 
   .tabContentGroup {
@@ -250,14 +250,7 @@
   display: flex;
   flex-direction: column;
   .listGrp {
-    border-radius: 48px;
-    background: rgba(255, 255, 255, 0.8);
-    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
-    padding: 2em;
-    flex-grow: 1;
-    @include screen('tablet') {
-      padding: 1.5em 1em;
-    }
+    @include boxStyleA(2em, 2em, 1.5em, 1em);
     ul {
       @include li-reset;
       margin: 1.5em 0;
@@ -300,13 +293,7 @@
 
 //常用服務
 .serviceBlock {
-  border-radius: 48px;
-  background: rgba(255, 255, 255, 0.8);
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
-  padding: 2em 3em;
-  @include screen('tablet') {
-    padding: 2em 1em;
-  }
+  @include boxStyleA(2em, 3em, 2em, 1em);
   .serviceSlider {
     padding: 0 6em;
     @include screen('mobile') {
@@ -373,13 +360,7 @@
 
 //新書看板
 .booksBlock {
-  border-radius: 48px;
-  background: rgba(255, 255, 255, 0.8);
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
-  padding: 2em 3em;
-  @include screen('mobile') {
-    padding: 2em 1em;
-  }
+  @include boxStyleA(2em, 3em, 2em, 1em);
   .bookSlider {
     padding: 0 6em;
     @include screen('mobile') {
