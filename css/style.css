@@ -5608,18 +5608,15 @@ table.table_sprite tr:nth-child(even) {
     border: none !important;
     border-bottom: 1px solid #eee !important;
     position: relative;
-    padding-left: 35% !important;
     white-space: normal;
     text-align: left;
+    display: flex;
   }
   .table_list td:before {
     content: attr(data-title);
-    position: absolute;
-    top: 0.5em;
-    left: 0.5em;
     width: 30%;
     padding-right: 10px;
-    white-space: nowrap;
+    word-break: break-word;
     text-align: left;
     font-weight: bold;
     color: #000;
