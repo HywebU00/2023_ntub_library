@@ -144,23 +144,6 @@ body {
           }
         }
       }
-      &:nth-of-type(4) {
-        &::before {
-          content: '';
-          position: absolute;
-          left: 0;
-          bottom: -330px;
-          width: 410px;
-          height: 410px;
-          background: url(../images/bg_04.svg) left bottom no-repeat;
-          background-size: contain;
-          @include screen('mobile') {
-            bottom: -150px;
-            width: 220px;
-            height: 220px;
-          }
-        }
-      }
     }
     .events {
       &::after {
