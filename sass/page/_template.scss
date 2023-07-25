@@ -70,7 +70,9 @@ body {
   .branchInfo {
     margin-top: 4rem;
   }
-  &.mp {
+}
+.mp {
+  .main {
     > section {
       &:nth-of-type(1) {
         &::before {

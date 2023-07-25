@@ -7699,7 +7699,8 @@ body.noscroll {
 .main .branchInfo {
   margin-top: 4rem;
 }
-.main.mp > section:nth-of-type(1)::before {
+
+.mp .main > section:nth-of-type(1)::before {
   content: "";
   position: absolute;
   right: -270px;
@@ -7711,7 +7712,7 @@ body.noscroll {
   animation: rotate-90-bottom-ccw 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 3s both;
 }
 @media screen and (max-width: 767px) {
-  .main.mp > section:nth-of-type(1)::before {
+  .mp .main > section:nth-of-type(1)::before {
     bottom: auto;
     top: 430px;
     right: -200px;
@@ -7719,7 +7720,7 @@ body.noscroll {
     height: 260px;
   }
 }
-.main.mp > section:nth-of-type(1)::after {
+.mp .main > section:nth-of-type(1)::after {
   content: "";
   position: absolute;
   right: -120px;
@@ -7730,11 +7731,11 @@ body.noscroll {
   background-size: contain;
 }
 @media screen and (max-width: 767px) {
-  .main.mp > section:nth-of-type(1)::after {
+  .mp .main > section:nth-of-type(1)::after {
     top: 500px;
   }
 }
-.main.mp > section:nth-of-type(2)::before {
+.mp .main > section:nth-of-type(2)::before {
   content: "";
   position: absolute;
   left: -276px;
@@ -7746,14 +7747,14 @@ body.noscroll {
   animation: rotate-90-br-cw 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 3.5s both;
 }
 @media screen and (max-width: 767px) {
-  .main.mp > section:nth-of-type(2)::before {
+  .mp .main > section:nth-of-type(2)::before {
     left: -250px;
     top: -180px;
     width: 200px;
     height: 200px;
   }
 }
-.main.mp > section:nth-of-type(2)::after {
+.mp .main > section:nth-of-type(2)::after {
   content: "";
   position: absolute;
   top: 0;
@@ -7764,14 +7765,14 @@ body.noscroll {
   background-size: 21px;
 }
 @media screen and (max-width: 767px) {
-  .main.mp > section:nth-of-type(2)::after {
+  .mp .main > section:nth-of-type(2)::after {
     right: 40px;
     width: 240px;
     height: 16px;
     background-size: 16px;
   }
 }
-.main.mp > section:nth-of-type(4)::before {
+.mp .main > section:nth-of-type(4)::before {
   content: "";
   position: absolute;
   left: 0;
@@ -7782,13 +7783,13 @@ body.noscroll {
   background-size: contain;
 }
 @media screen and (max-width: 767px) {
-  .main.mp > section:nth-of-type(4)::before {
+  .mp .main > section:nth-of-type(4)::before {
     bottom: -150px;
     width: 220px;
     height: 220px;
   }
 }
-.main.mp .events::after {
+.mp .main .events::after {
   content: "";
   position: absolute;
   right: 30px;
@@ -7799,11 +7800,11 @@ body.noscroll {
   background-size: contain;
 }
 @media screen and (max-width: 767px) {
-  .main.mp .events::after {
+  .mp .main .events::after {
     right: -100px;
   }
 }
-.main.mp .branchInfo .container::before {
+.mp .main .branchInfo .container::before {
   content: "";
   position: absolute;
   right: 78px;
@@ -7815,11 +7816,11 @@ body.noscroll {
   transform: scaleX(-1);
 }
 @media screen and (max-width: 767px) {
-  .main.mp .branchInfo .container::before {
+  .mp .main .branchInfo .container::before {
     content: none;
   }
 }
-.main.mp .branchInfo .container::after {
+.mp .main .branchInfo .container::after {
   content: "";
   position: absolute;
   top: 20px;
@@ -7830,7 +7831,7 @@ body.noscroll {
   background-size: 21px;
 }
 @media screen and (max-width: 767px) {
-  .main.mp .branchInfo .container::after {
+  .mp .main .branchInfo .container::after {
     right: 20px;
     top: -50px;
     height: 16px;
