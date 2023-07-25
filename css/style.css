@@ -2486,27 +2486,6 @@ div.tag ul li a:hover, div.tag ul li a:focus {
     width: 100%;
   }
 }
-.header .headerTop .searchCtrl, .header .headerTop .sidebarCtrl {
-  width: 60px !important;
-  height: 60px !important;
-  position: absolute;
-  top: 0px;
-  display: block;
-  font-size: 0em;
-  padding: 15px;
-  margin: 0;
-  min-width: auto;
-  min-height: auto;
-  background: transparent;
-  border: none;
-  box-shadow: none;
-  box-sizing: border-box;
-}
-@media screen and (max-width: 767px) {
-  .header .headerTop .searchCtrl, .header .headerTop .sidebarCtrl {
-    display: block !important;
-  }
-}
 .header .headerTop {
   width: 100%;
   max-width: 1440px;
@@ -2533,7 +2512,25 @@ div.tag ul li a:hover, div.tag ul li a:focus {
 }
 .header .headerTop .sidebarCtrl {
   display: none;
+  width: 60px !important;
+  height: 60px !important;
+  position: absolute;
+  top: 0px;
   left: 0px;
+  font-size: 0em;
+  padding: 15px;
+  margin: 0;
+  min-width: auto;
+  min-height: auto;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 767px) {
+  .header .headerTop .sidebarCtrl {
+    display: block !important;
+  }
 }
 .header .headerTop .sidebarCtrl span {
   position: absolute;
@@ -2553,21 +2550,7 @@ div.tag ul li a:hover, div.tag ul li a:focus {
   top: 36px;
 }
 .header .headerTop .searchCtrl {
-  display: none;
-  right: 0px;
-  font-size: 0em;
-}
-.header .headerTop .searchCtrl:before {
-  width: 40px;
-  height: 40px;
-  background: url(../images/icon/icon_search2.svg) no-repeat center center;
-  background-size: 28px;
-  opacity: 0.6;
-  content: "";
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  display: block;
+  display: none !important;
 }
 .header h1 {
   width: 460px;
@@ -8036,6 +8019,42 @@ body.noscroll {
 }
 .more a:hover::before {
   right: -8px;
+}
+
+.mp .header .headerTop .searchCtrl {
+  display: none;
+  font-size: 0em;
+  width: 60px !important;
+  height: 60px !important;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  font-size: 0em;
+  padding: 15px;
+  margin: 0;
+  min-width: auto;
+  min-height: auto;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 767px) {
+  .mp .header .headerTop .searchCtrl {
+    display: block !important;
+  }
+}
+.mp .header .headerTop .searchCtrl:before {
+  width: 40px;
+  height: 40px;
+  background: url(../images/icon/icon_search2.svg) no-repeat center center;
+  background-size: 28px;
+  opacity: 0.6;
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: block;
 }
 
 .readerBlock {
