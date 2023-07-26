@@ -201,9 +201,13 @@ body {
 ////////////////////////////////////////////////////////////
 // 為了與首頁區隔，請在內頁加上innerpage ClassName
 .innerpage {
+  @include screen('mobile') {
+    padding-top: 60px;
+  }
+
   > .container {
     @include gutter(); //gutter 代表左右要留白
-    padding-top: 30px;
+    padding-top: 40px;
     @include screen('tablet') {
       @include gutter(30px);
     }

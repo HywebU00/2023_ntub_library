@@ -1428,6 +1428,12 @@ kbd kbd {
   font-size: 0.875rem;
   margin: 0px auto 5px;
 }
+@media screen and (max-width: 767px) {
+  .breadcrumb {
+    max-width: calc(100% - 60px);
+    margin: 0 0 5px 0;
+  }
+}
 .breadcrumb ul {
   margin: 0;
   padding: 0;
@@ -2497,7 +2503,7 @@ div.tag ul li a:hover, div.tag ul li a:focus {
   background: #6b246b;
   background: linear-gradient(92deg, rgb(43, 34, 92) 0%, rgb(107, 36, 107) 60%, rgb(149, 16, 110) 100%);
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1399px) {
   .header .headerTop {
     padding: 10px 15px;
   }
@@ -2640,6 +2646,7 @@ div.tag ul li a:hover, div.tag ul li a:focus {
   list-style: none;
   display: flex;
   justify-content: flex-end;
+  flex-wrap: wrap;
 }
 .header .navigation .navlist li {
   flex: 0 0 auto;
@@ -2967,7 +2974,7 @@ div.tag ul li a:hover, div.tag ul li a:focus {
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.15) -10px -10px 32px 5px;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1100px) {
   .mainImg {
     margin-top: -10px;
   }
@@ -7726,13 +7733,18 @@ body.noscroll {
   margin-top: 4rem;
 }
 
+@media screen and (max-width: 767px) {
+  .innerpage {
+    padding-top: 60px;
+  }
+}
 .innerpage > .container {
   position: relative;
   min-height: 1px;
   padding-left: 90px;
   padding-right: 90px;
   box-sizing: border-box;
-  padding-top: 30px;
+  padding-top: 40px;
 }
 @media screen and (max-width: 991px) {
   .innerpage > .container {
@@ -8085,24 +8097,27 @@ body.noscroll {
     background-size: 16px;
   }
 }
+.mp .readerBlock {
+  top: 150px;
+}
 
 .readerBlock {
   position: fixed;
   right: -380px;
-  top: 20%;
+  top: 220px;
   display: flex;
   z-index: 110;
   max-width: 100%;
   width: 440px;
   font-size: 1.125em;
-  box-shadow: rgba(0, 0, 0, 0.25) 0 0 18px 5px;
   border-radius: 20px 0 0 20px;
   transition: 0.4s;
 }
 @media screen and (max-width: 767px) {
   .readerBlock {
-    top: 80px;
+    top: 70px !important;
     position: absolute;
+    align-items: flex-start;
   }
 }
 @media screen and (max-width: 440px) {
@@ -8136,7 +8151,7 @@ body.noscroll {
   background-size: 1.125em;
   color: #fff;
   border: 0;
-  box-shadow: rgba(0, 0, 0, 0.6) 25px 0px 25px -25px;
+  box-shadow: rgba(0, 0, 0, 0.25) -2px 0 5px;
 }
 .readerBlock .readerLogin::after {
   content: "";
@@ -8151,6 +8166,17 @@ body.noscroll {
   background-size: 14px;
   border-radius: 50%;
 }
+@media screen and (max-width: 767px) {
+  .readerBlock .readerLogin {
+    text-indent: -9999px;
+    height: 60px;
+    min-height: auto;
+    padding: 0;
+  }
+  .readerBlock .readerLogin::after {
+    content: none;
+  }
+}
 .readerBlock .readerContent {
   width: 380px;
   flex: 0 1 380px;
@@ -8158,6 +8184,12 @@ body.noscroll {
   color: #fff;
   background: #6b246b;
   background: linear-gradient(-90deg, rgb(43, 34, 92) 0%, rgb(107, 36, 107) 70%, rgb(149, 16, 110) 100%);
+  box-shadow: rgba(0, 0, 0, 0.25) 0 2px 5px;
+}
+@media screen and (max-width: 767px) {
+  .readerBlock .readerContent {
+    border-radius: 0 0 0 20px;
+  }
 }
 .readerBlock .readerContent input[type=text],
 .readerBlock .readerContent input[type=password] {

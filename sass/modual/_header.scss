@@ -25,7 +25,7 @@
     padding: 15px 90px;
     background: $secondaryColor;
     background: linear-gradient(92deg, rgba(43, 34, 92, 1) 0%, rgba(107, 36, 107, 1) 60%, rgba(149, 16, 110, 1) 100%);
-    @include screen('tablet') {
+    @media screen and (max-width: 1399px) {
       padding: 10px 15px;
     }
     @include screen('mobile') {
@@ -157,6 +157,7 @@
         list-style: none;
         display: flex;
         justify-content: flex-end;
+        flex-wrap: wrap;
       }
       li {
         flex: 0 0 auto;
@@ -518,7 +519,7 @@
   border-radius: 168px 0 0 0;
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.15) -10px -10px 32px 5px;
-  @include screen('tablet') {
+  @media screen and (max-width: 1100px) {
     margin-top: -10px;
   }
   @include screen('mobile') {
