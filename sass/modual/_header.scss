@@ -12,9 +12,6 @@
     width: 100%;
   }
 
-  // mobile btn for extend
-  %mobileCtrlBtn {
-  }
   .headerTop {
     width: 100%;
     max-width: $container-max;
@@ -25,7 +22,7 @@
     padding: 15px 90px;
     background: $secondaryColor;
     background: linear-gradient(92deg, rgba(43, 34, 92, 1) 0%, rgba(107, 36, 107, 1) 60%, rgba(149, 16, 110, 1) 100%);
-    @media screen and (max-width: 1399px) {
+    @media screen and (max-width: 1200px) {
       padding: 10px 15px;
     }
     @include screen('mobile') {
@@ -340,6 +337,9 @@
       padding: 0.5em 1em;
       font-weight: bold;
       border-radius: 2px;
+      @media screen and (max-width: 1200px) {
+        background-color: rgba(255, 255, 255, 0.65);
+      }
       @include screen('mobile') {
         padding: 0.5em;
         flex: 0 1 auto;

@@ -415,7 +415,7 @@ $(function () {
           $('.btn-fatfooter').attr('name', '展開選單/OPEN');
         }
       });
-    $(this).stop(true, true).toggleClass('close');
+    $(this).stop(true, true).toggleClass('open');
   });
   /*-----------------------------------*/
   ////////////////多組Tab////////////////

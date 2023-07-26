@@ -243,7 +243,7 @@
       padding: 30px 56px 2px 90px;
       border-radius: 0 90px 1px 0;
       display: inline-flex;
-      @include screen('tablet') {
+      @media screen and (max-width: 1200px) {
         padding: 30px 15px 2px;
       }
       @include screen('mobile') {

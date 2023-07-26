@@ -2503,7 +2503,7 @@ div.tag ul li a:hover, div.tag ul li a:focus {
   background: #6b246b;
   background: linear-gradient(92deg, rgb(43, 34, 92) 0%, rgb(107, 36, 107) 60%, rgb(149, 16, 110) 100%);
 }
-@media screen and (max-width: 1399px) {
+@media screen and (max-width: 1200px) {
   .header .headerTop {
     padding: 10px 15px;
   }
@@ -2804,6 +2804,11 @@ div.tag ul li a:hover, div.tag ul li a:focus {
   padding: 0.5em 1em;
   font-weight: bold;
   border-radius: 2px;
+}
+@media screen and (max-width: 1200px) {
+  .search .tabItems button {
+    background-color: rgba(255, 255, 255, 0.65);
+  }
 }
 @media screen and (max-width: 767px) {
   .search .tabItems button {
@@ -3209,7 +3214,7 @@ div.tag ul li a:hover, div.tag ul li a:focus {
   border-radius: 0 90px 1px 0;
   display: inline-flex;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1200px) {
   .mp .menu > ul {
     padding: 30px 15px 2px;
   }
@@ -4098,9 +4103,9 @@ footer .counter em {
   border: 2px solid #453142;
   border-left: none;
   border-bottom: none;
-  transform: rotate(-45deg);
+  transform: rotate(135deg);
   left: calc(50% - 10px);
-  top: 10px;
+  top: 0;
   transition: 0.3s ease-out;
 }
 .fatfooter .btn-fatfooter:hover, .fatfooter .btn-fatfooter:focus {
@@ -4114,9 +4119,9 @@ footer .counter em {
   cursor: pointer;
   background: transparent;
 }
-.fatfooter .btn-fatfooter.close:before {
-  transform: rotate(135deg) !important;
-  top: 5px;
+.fatfooter .btn-fatfooter.open:before {
+  transform: rotate(-45deg) !important;
+  top: 10px;
 }
 .fatfooter nav {
   overflow: hidden;
