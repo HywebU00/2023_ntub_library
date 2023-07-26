@@ -2944,6 +2944,16 @@ div.tag ul li a:hover, div.tag ul li a:focus {
 .m_search .tabItems {
   padding: 0 15px;
 }
+.m_search .tabItems .item {
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 0.65);
+}
+.m_search .tabItems .item.active {
+  background-color: #6b246b;
+}
+.m_search .tabItems .item.active:hover {
+  background-color: #6b246b;
+}
 .m_search .btn_grp {
   flex: 1 1 auto;
   padding: 0.25em 0.5em;
