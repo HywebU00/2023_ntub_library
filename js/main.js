@@ -283,20 +283,10 @@ $(function () {
     ww = _window.outerWidth();
     var readerBlock = $('.readerBlock'),
       readerLogin = $('.readerLogin');
-    if (ww < wwMedium) {
-      readerLogin.off().on('click', function (e) {
-        $(this).parent(readerBlock).stop(true, true).toggleClass('open');
-      });
-    } else {
-      readerBlock.on({
-        mouseenter: function () {
-          $(this).addClass('open');
-        },
-        mouseleave: function () {
-          $(this).removeClass('open');
-        },
-      });
-    }
+
+    readerLogin.off().on('click', function (e) {
+      $(this).parent(readerBlock).stop(true, true).toggleClass('open');
+    });
   }
   readerArea();
 
