@@ -5645,7 +5645,7 @@ table.table_sprite tr:nth-child(even) {
   }
   .table_list td:before {
     content: attr(data-title);
-    width: 30%;
+    flex: 0 0 25%;
     padding-right: 10px;
     word-break: break-word;
     text-align: left;

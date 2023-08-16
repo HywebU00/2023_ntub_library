@@ -90,12 +90,13 @@ table {
       white-space: normal;
       text-align: left;
       display: flex;
+
       &:before {
         content: attr(data-title);
         // position: absolute;
         // top: 0.5em;
         // left: 0.5em;
-        width: 30%;
+        flex: 0 0 25%;
         padding-right: 10px;
         word-break: break-word;
         text-align: left;
