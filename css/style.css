@@ -5642,6 +5642,7 @@ table.table_sprite tr:nth-child(even) {
     white-space: normal;
     text-align: left;
     display: flex;
+    word-break: break-word;
   }
   .table_list td:before {
     content: attr(data-title);

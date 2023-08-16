@@ -90,7 +90,7 @@ table {
       white-space: normal;
       text-align: left;
       display: flex;
-
+      word-break: break-word;
       &:before {
         content: attr(data-title);
         // position: absolute;
