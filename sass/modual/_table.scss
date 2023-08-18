@@ -38,6 +38,9 @@ table {
   td {
     border: #ddd 1px solid;
     word-break: break-all;
+    &.alignCenter {
+      text-align: center;
+    }
     a {
       word-break: break-all;
     }
@@ -48,6 +51,9 @@ table {
     border: #ddd 1px solid;
     text-align: center;
     white-space: nowrap;
+    &.alignCenter {
+      text-align: center;
+    }
   }
   &.table_hover {
     tr:hover {

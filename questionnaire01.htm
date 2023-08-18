@@ -104,7 +104,7 @@
         </nav>
         <!-- menu End -->
         <!-- 讀者專區 未登入狀態區塊-->
-        <div class="readerBlock" style="display: none">
+        <div class="readerBlock">
           <!-- 未登入狀態的btn -->
           <a href="javascript:;" class="readerLogin">讀者登入</a>
           <div class="readerContent">
@@ -123,7 +123,7 @@
           </div>
         </div>
         <!-- 讀這專區 已登入狀態區塊-->
-        <div class="readerBlock">
+        <div class="readerBlock" style="display: none">
           <!-- 已登入狀態的登入btn 文字變成讀者名-->
           <button class="readerLogin">張家祥</button>
           <div class="readerContent">
@@ -205,184 +205,51 @@
               </ul>
             </div>
           </div>
+          <div class="function">
+            <ul>
+              <li class="icon_back"><a href="#">回上一頁</a></li>
+            </ul>
+          </div>
           <!-- h2節點 -->
-          <h2 class="title">節點標題</h2>
-          <!-- LP Start -->
+          <h2 class="title">問卷調查</h2>
           <section class="lp">
-            <!-- category -->
-            <div class="category">
-              <ul>
-                <li><a href="#cate01" class="active">標籤1</a></li>
-                <li><a href="#cate02">標籤2</a></li>
-                <li><a href="#cate03">標籤3</a></li>
-              </ul>
-            </div>
             <div class="table_list">
-              <table id="cate01">
-                <caption>
-                  標籤1
-                </caption>
+              <table>
                 <thead>
                   <tr>
-                    <th>職務</th>
-                    <th>姓名</th>
-                    <th>業務職掌</th>
-                    <th>電話/樓層/Email</th>
-                    <th>職務代理人</th>
+                    <th>編號</th>
+                    <th class="name">問卷主題</th>
+                    <th>調查起迄時間</th>
+                    <th>填寫問卷</th>
+                    <th>觀看結果</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>助教(librarian)</td>
-                    <td>程秋萍(Chiu-Ping Cheng)</td>
-                    <td>
-                      策劃及督導下列讀者服務業務<br />
-                      1. 讀者經營<br />
-                      2. 館務行政<br />
-                      3. 校史業務<br />
-                      4. 流通櫃檯業務<br />
-                      5. 活動策展<br />
-                      6. 館際合作<br />
-                    </td>
-                    <td>(02)2322-6152 / 6F / ccp0923@ntub.edu.tw</td>
+                    <td class="alignCenter">01</td>
+                    <td class="">108年圖書館讀者滿意度調查</td>
+                    <td class="alignCenter">2019/09/01~2019/09/31</td>
+                    <td class="alignCenter"><a href="#" class="btn btn-primary">填寫</a></td>
                     <td></td>
                   </tr>
                   <tr>
-                    <td>專員</td>
-                    <td>張小美</td>
-                    <td>
-                      策劃及督導下列讀者服務業務<br />
-                      1. 讀者經營<br />
-                      2. 館務行政<br />
-                    </td>
-                    <td>
-                      (02)2322-6152 /<br />
-                      6F /<br />
-                      ccp0923@ntub.edu.tw
-                    </td>
-                    <td></td>
-                  </tr>
-                </tbody>
-              </table>
-              <table id="cate02">
-                <caption>
-                  標籤2
-                </caption>
-                <thead>
-                  <tr>
-                    <th>職務</th>
-                    <th>姓名</th>
-                    <th>業務職掌</th>
-                    <th>電話/樓層/Email</th>
-                    <th>職務代理人</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>專員</td>
-                    <td>王大明</td>
-                    <td>
-                      策劃及督導下列讀者服務業務<br />
-                      1. 讀者經營<br />
-                      2. 館務行政<br />
-                      3. 校史業務<br />
-                      4. 流通櫃檯業務<br />
-                      5. 活動策展<br />
-                      6. 館際合作<br />
-                    </td>
-                    <td></td>
+                    <td class="alignCenter">02</td>
+                    <td class="">108年圖書館讀者滿意度調查</td>
+                    <td class="alignCenter">2019/09/01~2019/09/31</td>
+                    <td class="alignCenter"><a href="#" class="btn btn-primary">填寫</a></td>
                     <td></td>
                   </tr>
                   <tr>
-                    <td>專員</td>
-                    <td>張小美</td>
-                    <td>
-                      策劃及督導下列讀者服務業務<br />
-                      1. 讀者經營<br />
-                      2. 館務行政<br />
-                    </td>
+                    <td class="alignCenter">03</td>
+                    <td class="">107年圖書館讀者滿意度調查</td>
+                    <td class="alignCenter">2019/09/01~2019/09/31</td>
                     <td></td>
-                    <td></td>
-                  </tr>
-                </tbody>
-              </table>
-              <table id="cate03">
-                <caption>
-                  標籤3
-                </caption>
-                <thead>
-                  <tr>
-                    <th>職務</th>
-                    <th>姓名</th>
-                    <th>業務職掌</th>
-                    <th>電話/樓層/Email</th>
-                    <th>職務代理人</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="">專員</td>
-                    <td>王大明</td>
-                    <td>
-                      策劃及督導下列讀者服務業務<br />
-                      1. 讀者經營<br />
-                      2. 館務行政<br />
-                      3. 校史業務<br />
-                      4. 流通櫃檯業務<br />
-                      5. 活動策展<br />
-                      6. 館際合作<br />
-                    </td>
-                    <td>(02)2322-6152 / 6F / ccp0923@ntub.edu.tw</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>專員</td>
-                    <td>張小美</td>
-                    <td>
-                      策劃及督導下列讀者服務業務<br />
-                      1. 讀者經營<br />
-                      2. 館務行政<br />
-                    </td>
-                    <td>(02)2322-6152 / 6F / ccp0923@ntub.edu.tw</td>
-                    <td></td>
+                    <td class="alignCenter"><a href="#" class="btn btn-secondary">詳細內容</a></td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </section>
-          <!-- LP End -->
-          <!-- Pagination -->
-          <div class="pagination">
-            <form action="">
-              <div class="form_inline">
-                <div class="total">
-                  共<span>308</span>筆資料，第<span>1/18</span>頁，每頁顯示
-                  <select name="" id="" aria-label="每頁顯示">
-                    <option value="">10</option>
-                    <option value="">20</option>
-                    <option value="">30</option>
-                    <option value="">40</option>
-                  </select>
-                  筆， <input type="button" value="確定" class="btn btn-submit" />
-                </div>
-              </div>
-            </form>
-            <ul class="page">
-              <li class="first"><a href="#" title="第一頁">第一頁 </a></li>
-              <li class="prev"><a href="#" title="回上一頁">回上一頁 </a></li>
-              <li class="active"><a href="#">1</a></li>
-              <li><a href="#">2</a></li>
-              <li><a href="#">3</a></li>
-              <li><a href="#">4</a></li>
-              <li><a href="#">5</a></li>
-              <li><a href="#">6</a></li>
-              <li><a href="#">7</a></li>
-              <li><a href="#">8</a></li>
-              <li><a href="#">9</a></li>
-              <li><a href="#">10</a></li>
-              <li class="next"><a href="#" title="下一頁">下一頁 </a></li>
-            </ul>
-          </div>
         </div>
       </div>
       <!-- fatfooter Start -->
@@ -515,6 +382,8 @@
     <script src="vendor/lazyload/lazyload.js"></script>
     <!-- picturefill -->
     <script src="vendor/picturefill/picturefill.min.js" async></script>
+    <!-- scrolltable -->
+    <script src="vendor/scrolltable/jquery.scroltable.min.js"></script>
     <!-- pg_calendar -->
     <script src="vendor/pg_calendar/js/pignose.calendar.full.js"></script>
     <!-- fancy -->

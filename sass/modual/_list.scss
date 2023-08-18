@@ -225,3 +225,135 @@
     color: $aColor;
   }
 }
+
+//活動列表頁
+.activities_list {
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    @include li-reset;
+
+    li {
+      flex-basis: 50%;
+      max-width: 50%;
+      margin: 0 0 30px 0;
+      @include gutter(30px);
+      @include screen('mobile') {
+        flex-basis: 100%;
+        max-width: 100%;
+        @include gutter(0);
+      }
+    }
+  }
+
+  .thumbnail {
+    position: relative;
+    width: 100%;
+
+    &:hover {
+      img {
+        transform: scale(1);
+      }
+    }
+
+    .library_tag {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      padding: 0.5em 1em;
+      color: #fff;
+      background: $secondaryColor;
+    }
+
+    .img-container {
+      @include aspect-ratio(2, 1);
+      background: #000;
+
+      img {
+        object-fit: cover;
+      }
+    }
+
+    .caption {
+      width: 100%;
+      overflow: hidden;
+      padding: 0.5em 120px 1em 1em;
+
+      @include screen('mobile') {
+        padding: 0.5em 1em 1em;
+      }
+
+      h2,
+      h3,
+      h4 {
+        margin-bottom: 0.5em;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      .time {
+        word-wrap: word-break;
+        font-size: 0.938em;
+
+        time {
+          font-size: 1em;
+          padding-right: 0.2em;
+          display: inline-block;
+        }
+
+        span {
+          @include screen('xs_mobile') {
+            display: block;
+          }
+        }
+      }
+
+      ul {
+        @include screen('mobile') {
+          padding-right: 120px;
+        }
+
+        li {
+          width: 100%;
+          padding: 0;
+          float: none;
+          margin: 0;
+        }
+      }
+
+      .status {
+        position: absolute;
+        width: 100px;
+        height: 80px;
+        right: 1em;
+        bottom: 1em;
+        background: #f1f1f1;
+        padding: 0.5em;
+        color: $color-word;
+        text-align: center;
+
+        &.register {
+          color: $primaryColor;
+        }
+
+        &.full {
+          color: lighten($color-word, 10);
+        }
+
+        span {
+          display: block;
+          padding: 0.2em;
+          font-size: 0.938em;
+        }
+
+        .people {
+          font-size: 1.125em;
+          font-weight: bold;
+          font-family: Georgia;
+        }
+      }
+    }
+  }
+}

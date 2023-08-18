@@ -22,9 +22,13 @@ h2.title {
 
 // .tt{ color: #222; }
 .cp {
+  .num {
+    color: $secondaryColor;
+    font-weight: bold;
+  }
   .pic {
     float: left;
-    margin: 0px 1em 1em 0;
+    margin: 0px 2em 1em 0;
     width: auto;
     width: 45%;
     max-width: 400px;
@@ -80,6 +84,12 @@ h2.title {
   }
   a {
     @include aSetting;
+  }
+}
+
+.activity_content {
+  + * {
+    clear: both;
   }
 }
 
