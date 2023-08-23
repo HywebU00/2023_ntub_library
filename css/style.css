@@ -6119,14 +6119,15 @@ abbr[title] {
   position: absolute;
   padding: 0.2em 0 !important;
   left: 0.5em;
-  top: 0.6em;
+  top: calc(50% - 1.1em);
   background: none;
-  border-right: 1px solid #ccc;
-  width: 2.4em;
+  width: 2.2em;
+  height: 2.2em;
   pointer-events: none;
 }
 .input-i i:before {
-  width: 2.2em;
+  width: 100%;
+  height: 100%;
   text-align: center;
 }
 .input-i i + input {
@@ -8949,6 +8950,9 @@ body.noscroll {
 .readerBlock .readerContent input[type=text]::placeholder,
 .readerBlock .readerContent input[type=password]::placeholder {
   color: #cd9cc8;
+}
+.readerBlock .readerContent .input-i i::before {
+  background-size: 1.4rem;
 }
 .readerBlock .readerContent ul {
   display: flex;

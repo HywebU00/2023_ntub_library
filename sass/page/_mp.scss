@@ -342,6 +342,13 @@
         color: #cd9cc8;
       }
     }
+    .input-i {
+      i {
+        &::before {
+          background-size: 1.4rem;
+        }
+      }
+    }
     ul {
       display: flex;
       flex-wrap: wrap;
