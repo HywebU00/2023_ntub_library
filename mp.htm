@@ -950,7 +950,7 @@
                 <div class="remark">
                   <ul>
                     <li class="close-day">休館日</li>
-                    <!-- <li class="act-day">開館日</li> -->
+                    <li class="act-day">活動日</li>
                   </ul>
                 </div>
               </div>
@@ -1143,8 +1143,11 @@
     </script>
     <script>
       $(function () {
+        var arr = [];
+        arr.push('2023-09-16');
         $('.calendar').pignoseCalendar({
           lang: 'ch',
+          toggle: true,
           disabledDates: ['2023-07-03', '2023-07-10', '2023-07-17', '2023-07-24', '2023-07-31'],
         });
       });

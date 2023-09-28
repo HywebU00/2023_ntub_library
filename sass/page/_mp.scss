@@ -842,7 +842,7 @@
 
   .act-day {
     &:before {
-      background: $primaryColor;
+      background: $secondaryColor;
     }
   }
 }
@@ -898,6 +898,15 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      cursor: default;
+    }
+
+    &.event {
+      a {
+        background-color: $secondaryColor;
+        color: #fff !important;
+        cursor: pointer;
+      }
     }
 
     &.pignose-calendar-unit-active {
@@ -912,6 +921,11 @@
     &.pignose-calendar-unit-sun {
       a {
         color: #555;
+      }
+      &.event {
+        a {
+          color: #fff;
+        }
       }
     }
 

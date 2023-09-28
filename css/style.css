@@ -9505,7 +9505,7 @@ body.noscroll {
   background: #e3f4fd;
 }
 .calendarBlock .act-day:before {
-  background: #3f2c77;
+  background: #6b246b;
 }
 
 .pignose-calendar {
@@ -9547,6 +9547,12 @@ body.noscroll {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: default;
+}
+.pignose-calendar .pignose-calendar-unit.event a {
+  background-color: #6b246b;
+  color: #fff !important;
+  cursor: pointer;
 }
 .pignose-calendar .pignose-calendar-unit.pignose-calendar-unit-active a {
   background: #3f2c77;
@@ -9555,6 +9561,9 @@ body.noscroll {
 }
 .pignose-calendar .pignose-calendar-unit.pignose-calendar-unit-sat a, .pignose-calendar .pignose-calendar-unit.pignose-calendar-unit-sun a {
   color: #555;
+}
+.pignose-calendar .pignose-calendar-unit.pignose-calendar-unit-sat.event a, .pignose-calendar .pignose-calendar-unit.pignose-calendar-unit-sun.event a {
+  color: #fff;
 }
 .pignose-calendar .pignose-calendar-unit.pignose-calendar-unit-disabled a {
   opacity: 1;
