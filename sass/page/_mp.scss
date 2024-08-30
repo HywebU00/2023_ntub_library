@@ -901,6 +901,10 @@
       cursor: default;
     }
 
+    // a[href='#'],
+    // a[href='javascript:;'] {
+    //   cursor: default;
+    // }
     &.event {
       a {
         background-color: $secondaryColor;
