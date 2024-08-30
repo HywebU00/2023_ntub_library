@@ -212,12 +212,12 @@
           content: '';
           position: absolute;
           right: 78px;
-          top: -56px;
-          width: 284px;
-          height: 284px;
+          top: -36px;
+          width: 274px;
+          height: 274px;
           background: url(../images/bg_03.svg) center no-repeat;
           background-size: contain;
-          transform: scaleX(-1);
+          //transform: scaleX(-1);
           @include screen('mobile') {
             content: none;
           }

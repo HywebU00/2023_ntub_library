@@ -54,7 +54,7 @@ body {
   }
   > section {
     position: relative;
-    margin-top: 3rem;
+    margin-top: 0.5em;
     @include screen('mobile') {
       &:first-of-type {
         margin-top: 0;
@@ -68,7 +68,7 @@ body {
     margin-top: 2em;
   }
   .branchInfo {
-    margin-top: 4rem;
+    margin-top: 2rem;
   }
 }
 // .mp {
@@ -262,7 +262,7 @@ body {
   align-items: center;
   font-size: 2.375rem;
   color: $primaryColor;
-  margin-bottom: 0.8em;
+  margin-bottom: 0.5em;
   position: relative;
   z-index: 1;
 
